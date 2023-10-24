@@ -1,0 +1,72 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`flattenTreeArray > treeArray 数据扁平化 1`] = `
+[
+  {
+    "children": [
+      {
+        "key": "1-1",
+      },
+      {
+        "children": [
+          {
+            "key": "1-2-1",
+            "test": 123,
+          },
+          {
+            "key": "1-2-2",
+          },
+        ],
+        "key": "1-2",
+      },
+    ],
+    "key": "1",
+  },
+  {
+    "key": "1-1",
+  },
+  {
+    "children": [
+      {
+        "key": "1-2-1",
+        "test": 123,
+      },
+      {
+        "key": "1-2-2",
+      },
+    ],
+    "key": "1-2",
+  },
+  {
+    "key": "1-2-1",
+    "test": 123,
+  },
+  {
+    "key": "1-2-2",
+  },
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "key": "2-1-1",
+          },
+        ],
+        "key": "2-1",
+      },
+    ],
+    "key": "2",
+  },
+  {
+    "children": [
+      {
+        "key": "2-1-1",
+      },
+    ],
+    "key": "2-1",
+  },
+  {
+    "key": "2-1-1",
+  },
+]
+`;

@@ -1,0 +1,109 @@
+{
+  "name": "@devops-web/utils",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
+  "unpkg": "dist/index.umd.js",
+  "jsdelivr": "dist/index.umd.js",
+  "exports": {
+    ".": {
+      "types": "./es/index.d.ts",
+      "import": "./es/index.js",
+      "require": "./lib/index.js"
+    },
+    "./es": {
+      "types": "./es/index.d.ts",
+      "import": "./es/index.js"
+    },
+    "./lib": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.js"
+    },
+    "./es/*.js": {
+      "types": "./es/*.d.ts",
+      "import": "./es/*.js"
+    },
+    "./es/*": {
+      "types": [
+        "./es/*.d.ts",
+        "./es/*/index.d.ts"
+      ],
+      "import": "./es/*.js"
+    },
+    "./lib/*.js": {
+      "types": "./lib/*.d.ts",
+      "require": "./lib/*.js"
+    },
+    "./lib/*": {
+      "types": [
+        "./lib/*.d.ts",
+        "./lib/*/index.d.ts"
+      ],
+      "require": "./lib/*.js"
+    },
+    "./*": "./*"
+  },
+  "scripts": {
+    "dev": "rollup --watch -c rollup.config.js",
+    "clean": "rimraf ./dist ./es ./lib",
+    "build": "npm run clean && rollup -c rollup.config.js",
+    "test:unit": "vitest --ui --coverage",
+    "docs": "typedoc --options typedoc.json",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .eslintignore",
+    "prepublishOnly": "vitest run && pnpm run build",
+    "prettier": "prettier --write src/**/*.ts",
+    "lint-staged": "npx lint-staged",
+    "type:check": "npx tsc --noEmit --skipLibCheck",
+    "prepare": "husky install",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
+  },
+  "files": [
+    "dist",
+    "lib",
+    "es"
+  ],
+  "keywords": [],
+  "author": "fangwenzheng",
+  "license": "ISC",
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@devops-web/eslint-config": "^1.0.7",
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rushstack/eslint-patch": "^1.2.0",
+    "@vitest/coverage-istanbul": "^0.33.0",
+    "@vitest/ui": "^0.33.0",
+    "conventional-changelog-cli": "^4.1.0",
+    "dayjs": "^1.11.10",
+    "eslint": "^8.39.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^2.8.8",
+    "rimraf": "^5.0.1",
+    "rollup": "^3.26.3",
+    "rollup-plugin-dts": "^5.3.0",
+    "rollup-plugin-typescript2": "^0.35.0",
+    "tslib": "^2.6.2",
+    "typedoc": "^0.25.2",
+    "typescript": "~5.0.4",
+    "vitest": "^0.32.0"
+  },
+  "peerDependencies": {
+    "dayjs": ">=1"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
+}

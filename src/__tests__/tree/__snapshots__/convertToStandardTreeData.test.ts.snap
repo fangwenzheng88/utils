@@ -1,0 +1,331 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`convertToStandardTreeData > 添加自定义字段 1`] = `
+[
+  {
+    "children": [
+      {
+        "children": [],
+        "data": {
+          "childrenNodes": [],
+          "id": "2",
+          "name": "Node 1.1",
+        },
+        "isLeaf": false,
+        "key": "2",
+        "level": 1,
+        "parentKey": "1",
+        "title": "Node 1.1",
+      },
+      {
+        "children": [
+          {
+            "children": undefined,
+            "data": {
+              "id": "4",
+              "name": "Node 1.2.1",
+            },
+            "isLeaf": true,
+            "key": "4",
+            "level": 2,
+            "parentKey": "3",
+            "title": "Node 1.2.1",
+          },
+          {
+            "children": undefined,
+            "data": {
+              "id": "5",
+              "name": "Node 1.2.2",
+            },
+            "isLeaf": true,
+            "key": "5",
+            "level": 2,
+            "parentKey": "3",
+            "title": "Node 1.2.2",
+          },
+        ],
+        "data": {
+          "childrenNodes": [
+            {
+              "id": "4",
+              "name": "Node 1.2.1",
+            },
+            {
+              "id": "5",
+              "name": "Node 1.2.2",
+            },
+          ],
+          "id": "3",
+          "name": "Node 1.2",
+        },
+        "isLeaf": false,
+        "key": "3",
+        "level": 1,
+        "parentKey": "1",
+        "title": "Node 1.2",
+      },
+    ],
+    "data": {
+      "childrenNodes": [
+        {
+          "childrenNodes": [],
+          "id": "2",
+          "name": "Node 1.1",
+        },
+        {
+          "childrenNodes": [
+            {
+              "id": "4",
+              "name": "Node 1.2.1",
+            },
+            {
+              "id": "5",
+              "name": "Node 1.2.2",
+            },
+          ],
+          "id": "3",
+          "name": "Node 1.2",
+        },
+      ],
+      "id": "1",
+      "name": "Node 1",
+    },
+    "isLeaf": false,
+    "key": "1",
+    "level": 0,
+    "parentKey": undefined,
+    "title": "Node 1",
+  },
+  {
+    "children": [],
+    "data": {
+      "childrenNodes": [],
+      "id": "6",
+      "name": "Node 2",
+    },
+    "isLeaf": false,
+    "key": "6",
+    "level": 0,
+    "parentKey": undefined,
+    "title": "Node 2",
+  },
+]
+`;
+
+exports[`convertToStandardTreeData > 转换非标准treeData为标准格式 1`] = `
+[
+  {
+    "children": [
+      {
+        "children": [],
+        "data": {
+          "childrenNodes": [],
+          "id": "2",
+          "name": "Node 1.1",
+        },
+        "key": "2",
+        "level": 1,
+        "parentKey": "1",
+        "title": "Node 1.1",
+      },
+      {
+        "children": [
+          {
+            "children": undefined,
+            "data": {
+              "id": "4",
+              "name": "Node 1.2.1",
+            },
+            "key": "4",
+            "level": 2,
+            "parentKey": "3",
+            "title": "Node 1.2.1",
+          },
+          {
+            "children": undefined,
+            "data": {
+              "id": "5",
+              "name": "Node 1.2.2",
+            },
+            "key": "5",
+            "level": 2,
+            "parentKey": "3",
+            "title": "Node 1.2.2",
+          },
+        ],
+        "data": {
+          "childrenNodes": [
+            {
+              "id": "4",
+              "name": "Node 1.2.1",
+            },
+            {
+              "id": "5",
+              "name": "Node 1.2.2",
+            },
+          ],
+          "id": "3",
+          "name": "Node 1.2",
+        },
+        "key": "3",
+        "level": 1,
+        "parentKey": "1",
+        "title": "Node 1.2",
+      },
+    ],
+    "data": {
+      "childrenNodes": [
+        {
+          "childrenNodes": [],
+          "id": "2",
+          "name": "Node 1.1",
+        },
+        {
+          "childrenNodes": [
+            {
+              "id": "4",
+              "name": "Node 1.2.1",
+            },
+            {
+              "id": "5",
+              "name": "Node 1.2.2",
+            },
+          ],
+          "id": "3",
+          "name": "Node 1.2",
+        },
+      ],
+      "id": "1",
+      "name": "Node 1",
+    },
+    "key": "1",
+    "level": 0,
+    "parentKey": undefined,
+    "title": "Node 1",
+  },
+  {
+    "children": [],
+    "data": {
+      "childrenNodes": [],
+      "id": "6",
+      "name": "Node 2",
+    },
+    "key": "6",
+    "level": 0,
+    "parentKey": undefined,
+    "title": "Node 2",
+  },
+]
+`;
+
+exports[`convertToStandardTreeData > 转换非标准treeData为标准格式，并添加自定义字段 1`] = `
+[
+  {
+    "children": [
+      {
+        "children": [],
+        "data": {
+          "childrenNodes": [],
+          "id": "2",
+          "name": "Node 1.1",
+        },
+        "isLeaf": false,
+        "key": "2",
+        "level": 1,
+        "parentKey": "1",
+        "title": "Node 1.1",
+      },
+      {
+        "children": [
+          {
+            "children": undefined,
+            "data": {
+              "id": "4",
+              "name": "Node 1.2.1",
+            },
+            "isLeaf": true,
+            "key": "4",
+            "level": 2,
+            "parentKey": "3",
+            "title": "Node 1.2.1",
+          },
+          {
+            "children": undefined,
+            "data": {
+              "id": "5",
+              "name": "Node 1.2.2",
+            },
+            "isLeaf": true,
+            "key": "5",
+            "level": 2,
+            "parentKey": "3",
+            "title": "Node 1.2.2",
+          },
+        ],
+        "data": {
+          "childrenNodes": [
+            {
+              "id": "4",
+              "name": "Node 1.2.1",
+            },
+            {
+              "id": "5",
+              "name": "Node 1.2.2",
+            },
+          ],
+          "id": "3",
+          "name": "Node 1.2",
+        },
+        "isLeaf": false,
+        "key": "3",
+        "level": 1,
+        "parentKey": "1",
+        "title": "Node 1.2",
+      },
+    ],
+    "data": {
+      "childrenNodes": [
+        {
+          "childrenNodes": [],
+          "id": "2",
+          "name": "Node 1.1",
+        },
+        {
+          "childrenNodes": [
+            {
+              "id": "4",
+              "name": "Node 1.2.1",
+            },
+            {
+              "id": "5",
+              "name": "Node 1.2.2",
+            },
+          ],
+          "id": "3",
+          "name": "Node 1.2",
+        },
+      ],
+      "id": "1",
+      "name": "Node 1",
+    },
+    "isLeaf": false,
+    "key": "1",
+    "level": 0,
+    "parentKey": undefined,
+    "title": "Node 1",
+  },
+  {
+    "children": [],
+    "data": {
+      "childrenNodes": [],
+      "id": "6",
+      "name": "Node 2",
+    },
+    "isLeaf": false,
+    "key": "6",
+    "level": 0,
+    "parentKey": undefined,
+    "title": "Node 2",
+  },
+]
+`;

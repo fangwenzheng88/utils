@@ -1,0 +1,6 @@
+{
+  "entryPoints": ["./src"],
+  "includeVersion": true,
+  "out": "docs",
+  "readme": "CHANGELOG.md"
+}
