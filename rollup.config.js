@@ -15,11 +15,11 @@ export default [
         file: 'dist/index.umd.js',
         name: 'DevopsUtils',
         globals: {
-          dayjs: 'Dayjs'
-        }
-      }
+          dayjs: 'Dayjs',
+        },
+      },
     ],
-    plugins: [resolve(), commonjs(), typescript()]
+    plugins: [resolve(), commonjs(), typescript()],
   },
   {
     input,
@@ -30,10 +30,10 @@ export default [
         dir: 'lib',
         entryFileNames: '[name].js',
         preserveModules: true,
-        preserveModulesRoot: 'src'
-      }
+        preserveModulesRoot: 'src',
+      },
     ],
-    plugins: [resolve(), commonjs(), typescript()]
+    plugins: [resolve(), commonjs(), typescript()],
   },
   {
     external,
@@ -44,10 +44,10 @@ export default [
         dir: 'lib',
         entryFileNames: '[name].d.ts',
         preserveModules: true,
-        preserveModulesRoot: 'src'
-      }
+        preserveModulesRoot: 'src',
+      },
     ],
-    plugins: [dts({ respectExternal: true })]
+    plugins: [dts({ respectExternal: true })],
   },
   {
     input,
@@ -58,10 +58,10 @@ export default [
         dir: 'es',
         entryFileNames: '[name].js',
         preserveModules: true,
-        preserveModulesRoot: 'src'
-      }
+        preserveModulesRoot: 'src',
+      },
     ],
-    plugins: [resolve(), commonjs(), typescript()]
+    plugins: [resolve(), commonjs(), typescript()],
   },
   {
     external,
@@ -72,9 +72,9 @@ export default [
         dir: 'es',
         entryFileNames: '[name].d.ts',
         preserveModules: true,
-        preserveModulesRoot: 'src'
-      }
+        preserveModulesRoot: 'src',
+      },
     ],
-    plugins: [dts({ respectExternal: true })]
-  }
+    plugins: [dts({ respectExternal: true })],
+  },
 ]

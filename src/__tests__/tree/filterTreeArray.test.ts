@@ -6,20 +6,20 @@ const treeDataArr = [
     key: '1',
     children: [
       {
-        key: '1-1'
+        key: '1-1',
       },
       {
         key: '1-2',
         children: [
           {
-            key: '1-2-1'
+            key: '1-2-1',
           },
           {
-            key: '1-2-2'
-          }
-        ]
-      }
-    ]
+            key: '1-2-2',
+          },
+        ],
+      },
+    ],
   },
   {
     key: '2',
@@ -28,12 +28,12 @@ const treeDataArr = [
         key: '2-1',
         children: [
           {
-            key: '2-1-1'
-          }
-        ]
-      }
-    ]
-  }
+            key: '2-1-1',
+          },
+        ],
+      },
+    ],
+  },
 ]
 
 describe('filterTreeArray', () => {
@@ -49,12 +49,12 @@ describe('filterTreeArray', () => {
             key: '1-2',
             children: [
               {
-                key: '1-2-1'
-              }
-            ]
-          }
-        ]
-      }
+                key: '1-2-1',
+              },
+            ],
+          },
+        ],
+      },
     ])
   })
 
@@ -67,21 +67,21 @@ describe('filterTreeArray', () => {
         key: '1',
         children: [
           {
-            key: '1-1'
+            key: '1-1',
           },
           {
             key: '1-2',
             children: [
               {
-                key: '1-2-1'
+                key: '1-2-1',
               },
               {
-                key: '1-2-2'
-              }
-            ]
-          }
-        ]
-      }
+                key: '1-2-2',
+              },
+            ],
+          },
+        ],
+      },
     ])
   })
 

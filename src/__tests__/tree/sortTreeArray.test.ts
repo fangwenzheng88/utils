@@ -14,13 +14,13 @@ const treeDataArr: TreeNode[] = [
     children: [
       {
         id: 2,
-        name: 'Node 1.2'
+        name: 'Node 1.2',
       },
       {
         id: 1,
-        name: 'Node 1.1'
-      }
-    ]
+        name: 'Node 1.1',
+      },
+    ],
   },
   {
     id: 2,
@@ -28,14 +28,14 @@ const treeDataArr: TreeNode[] = [
     children: [
       {
         id: 4,
-        name: 'Node 2.2'
+        name: 'Node 2.2',
       },
       {
         id: 3,
-        name: 'Node 2.1'
-      }
-    ]
-  }
+        name: 'Node 2.1',
+      },
+    ],
+  },
 ]
 describe('sortTreeArray', () => {
   test('验证排序是否有效', () => {
@@ -49,13 +49,13 @@ describe('sortTreeArray', () => {
         children: [
           {
             id: 1,
-            name: 'Node 1.1'
+            name: 'Node 1.1',
           },
           {
             id: 2,
-            name: 'Node 1.2'
-          }
-        ]
+            name: 'Node 1.2',
+          },
+        ],
       },
       {
         id: 2,
@@ -63,14 +63,14 @@ describe('sortTreeArray', () => {
         children: [
           {
             id: 3,
-            name: 'Node 2.1'
+            name: 'Node 2.1',
           },
           {
             id: 4,
-            name: 'Node 2.2'
-          }
-        ]
-      }
+            name: 'Node 2.2',
+          },
+        ],
+      },
     ])
   })
 
@@ -93,8 +93,8 @@ describe('sortTreeArray', () => {
     const singleNodeArr = [
       {
         id: 1,
-        name: 'Node 1'
-      }
+        name: 'Node 1',
+      },
     ]
     const result = sortTreeArray(singleNodeArr, (a, b) => {
       return a.id - b.id // 按 id 升序排序
@@ -102,8 +102,8 @@ describe('sortTreeArray', () => {
     expect(result).toEqual([
       {
         id: 1,
-        name: 'Node 1'
-      }
+        name: 'Node 1',
+      },
     ])
   })
 
@@ -111,12 +111,12 @@ describe('sortTreeArray', () => {
     const noChildrenArr = [
       {
         id: 2,
-        name: 'Node 2'
+        name: 'Node 2',
       },
       {
         id: 1,
-        name: 'Node 1'
-      }
+        name: 'Node 1',
+      },
     ]
     const result = sortTreeArray(noChildrenArr, (a, b) => {
       return a.id - b.id // 按 id 升序排序
@@ -124,12 +124,12 @@ describe('sortTreeArray', () => {
     expect(result).toEqual([
       {
         id: 1,
-        name: 'Node 1'
+        name: 'Node 1',
       },
       {
         id: 2,
-        name: 'Node 2'
-      }
+        name: 'Node 2',
+      },
     ])
   })
 })

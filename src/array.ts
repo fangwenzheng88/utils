@@ -1,6 +1,6 @@
 /**
  * 从数组中移除第一个匹配的元素，并返回布尔值表示是否成功移除。
- * @category array
+ * @category ArrayUtils
  * @param array 要操作的数组。
  * @param value 要移除的元素。
  * @returns 如果成功移除了元素，则为true；否则为false。
@@ -16,7 +16,7 @@ export function remove<T>(array: T[], value: T): boolean {
 
 /**
  * 从数组中移除满足给定条件的第一个元素。
- * @category array
+ * @category ArrayUtils
  * @param array 要操作的数组。
  * @param predicate 决定要移除哪个元素的谓词函数。
  * @returns 是否移除成功。
@@ -32,7 +32,7 @@ export function removeBy<T>(array: T[], predicate: (item: T) => boolean): boolea
 
 /**
  * 从数组中移除所有匹配的元素，并返回移除的元素数量。
- * @category array
+ * @category ArrayUtils
  * @param array 要操作的数组。
  * @param value 要移除的元素。
  * @returns 返回移除的元素数量。
@@ -51,7 +51,7 @@ export function removeAll<T>(array: T[], value: T): number {
 
 /**
  * 从数组中移除满足给定条件的所有元素。
- * @category array
+ * @category ArrayUtils
  * @param array 要操作的数组。
  * @param predicate 决定要移除哪个元素的谓词函数。
  * @returns 返回移除的元素数量。
@@ -69,7 +69,7 @@ export function removeAllBy<T>(array: T[], predicate: (item: T) => boolean): num
 
 /**
  * 向数组中添加元素，仅当元素不存在于数组中时才添加，并返回布尔值表示是否成功添加。
- * @category array
+ * @category ArrayUtils
  * @param array 要操作的数组。
  * @param value 要添加的元素。
  * @returns 如果成功添加了元素，则为true；否则为false。
@@ -86,8 +86,7 @@ export type PartitionFilter<T> = (i: T, idx: number, arr: readonly T[]) => any
 
 /**
  * 根据过滤函数将数组分成两个部分
- *
- * @category array
+ * @category ArrayUtils
  * @example const [odd, even] = partition([1, 2, 3, 4], i => i % 2 != 0)
  */
 export function partition<T>(array: readonly T[], f1: PartitionFilter<T>): [T[], T[]]

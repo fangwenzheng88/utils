@@ -6,15 +6,34 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: ['main']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  get_history: # create an artifact from the existing documentation builds
+    runs-on: ubuntu-latest
+    steps:
+      - name: get the gh-pages repo
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+
+      - name: tar the existing docs
+        run: |
+          mkdir -p ./docs
+          tar -cvf documentation.tar ./docs
+
+      - name: create a document artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: documentation
+          path: documentation.tar
   # This workflow contains a single job called "build"
   build:
+    needs: get_history
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     permissions:
@@ -22,8 +41,16 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
-  
+      - name: Checkout src
+        uses: actions/checkout@v4
+
+      - run: mkdir -p ./docs
+      - name: Download the existing documents artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: documentation
+      - run: tar -xf documentation.tar ./docs -C ./docs
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
@@ -33,7 +60,8 @@ jobs:
           npm -g i pnpm@8
           pnpm install
           pnpm run docs
-          
+          node ./scripts/versions.js
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

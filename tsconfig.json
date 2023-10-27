@@ -9,17 +9,10 @@
     "esModuleInterop": true,
     "moduleResolution": "Node",
     "noImplicitAny": true,
-    "lib": [
-      "esnext",
-      "dom"
-    ],
+    "lib": ["esnext", "dom"],
     "outDir": "es",
     "declaration": false
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "src/**/__tests__/*"
-  ],
+  "include": ["src/**/*"],
+  "exclude": ["src/**/__tests__/*"]
 }

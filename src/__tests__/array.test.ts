@@ -1,5 +1,5 @@
 import { test, expect, describe } from 'vitest'
-import { remove, removeBy, removeAll, removeAllBy, addIfNotExists, partition } from '../index'
+import { remove, removeBy, removeAll, removeAllBy, addIfNotExists, partition } from '../array'
 
 describe('remove', () => {
   test('从数组中删除指定的值并返回true', () => {

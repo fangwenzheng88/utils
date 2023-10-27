@@ -6,20 +6,20 @@ const treeDataArr = [
     key: '1',
     children: [
       {
-        key: '1-1'
+        key: '1-1',
       },
       {
         key: '1-2',
         children: [
           {
-            key: '1-2-1'
+            key: '1-2-1',
           },
           {
-            key: '1-2-2'
-          }
-        ]
-      }
-    ]
+            key: '1-2-2',
+          },
+        ],
+      },
+    ],
   },
   {
     key: '2',
@@ -28,12 +28,12 @@ const treeDataArr = [
         key: '2-1',
         children: [
           {
-            key: '2-1-1'
-          }
-        ]
-      }
-    ]
-  }
+            key: '2-1-1',
+          },
+        ],
+      },
+    ],
+  },
 ]
 
 describe('findTreeNode', () => {
@@ -42,7 +42,7 @@ describe('findTreeNode', () => {
       return node.key === '1-2-1'
     })
     expect(result).toEqual({
-      key: '1-2-1'
+      key: '1-2-1',
     })
   })
 
@@ -61,8 +61,8 @@ describe('findTreeNodes', () => {
     })
     expect(result).toEqual([
       {
-        key: '1-2-1'
-      }
+        key: '1-2-1',
+      },
     ])
   })
 
@@ -99,12 +99,12 @@ describe('findTreeParent', () => {
       key: '1-2',
       children: [
         {
-          key: '1-2-1'
+          key: '1-2-1',
         },
         {
-          key: '1-2-2'
-        }
-      ]
+          key: '1-2-2',
+        },
+      ],
     })
   })
 

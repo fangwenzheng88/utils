@@ -10,9 +10,15 @@ interface TreeConfig<T extends Record<string, any>> {
 const defaultTreeConfig: Required<TreeConfig<Record<string, any>>> = {
   key: 'key',
   parentKey: 'parentKey',
-  parentCondition: -1
+  parentCondition: -1,
 }
 
+/**
+ * @category tree
+ * @param array
+ * @param treeConfig
+ * @returns
+ */
 export function arrayToTree<T extends Record<string, any>>(array: T[], treeConfig?: TreeConfig<T>): TreeNode[] {
   const config = { ...defaultTreeConfig, ...treeConfig }
   const result: TreeNode[] = []
@@ -25,11 +31,11 @@ export function arrayToTree<T extends Record<string, any>>(array: T[], treeConfi
     if (itemMap[itemId]) {
       itemMap[itemId] = {
         ...item,
-        children: itemMap[itemId].children
+        children: itemMap[itemId].children,
       }
     } else {
       itemMap[itemId] = {
-        ...item
+        ...item,
       }
     }
 

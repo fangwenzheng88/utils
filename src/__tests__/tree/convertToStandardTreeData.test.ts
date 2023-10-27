@@ -15,23 +15,23 @@ const treeDataArr: TreeData[] = [
       {
         id: '2',
         name: 'Node 1.1',
-        childrenNodes: []
+        childrenNodes: [],
       },
       {
         id: '3',
         name: 'Node 1.2',
         childrenNodes: [
           { id: '4', name: 'Node 1.2.1' },
-          { id: '5', name: 'Node 1.2.2' }
-        ]
-      }
-    ]
+          { id: '5', name: 'Node 1.2.2' },
+        ],
+      },
+    ],
   },
   {
     id: '6',
     name: 'Node 2',
-    childrenNodes: []
-  }
+    childrenNodes: [],
+  },
 ]
 
 describe('convertToStandardTreeData', () => {
@@ -39,7 +39,7 @@ describe('convertToStandardTreeData', () => {
     const result = convertToStandardTreeData(treeDataArr, {
       key: 'id',
       title: 'name',
-      children: 'childrenNodes'
+      children: 'childrenNodes',
     })
     expect(result).toMatchSnapshot()
   })
@@ -51,7 +51,7 @@ describe('convertToStandardTreeData', () => {
       children: 'childrenNodes',
       extra(node) {
         return { isLeaf: !Array.isArray(node.childrenNodes) }
-      }
+      },
     })
     expect(result).toMatchSnapshot()
   })
@@ -63,7 +63,7 @@ describe('convertToStandardTreeData', () => {
       children: 'childrenNodes',
       extra(node) {
         return { isLeaf: !Array.isArray(node.childrenNodes), number: 1 as const }
-      }
+      },
     })
 
     assertType<TreeData['id']>(result[0].key)

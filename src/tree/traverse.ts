@@ -2,7 +2,7 @@ import type { TreeNode } from './types'
 
 /**
  * 深度优先遍历树形数据
- * @category tree/traverse
+ * @category tree
  * @param data 树形数据
  * @param callback 回调函数
  * @param childrenFieldName 子节点字段名
@@ -14,7 +14,7 @@ export function traverseTreeDFS<T extends TreeNode>(data: T[], callback?: (node:
 
 /**
  * 深度优先遍历树形数据
- * @category tree/traverse
+ * @category tree
  * @param data 树形数据
  * @param callback 回调函数
  * @param childrenFieldName 子节点字段名
@@ -61,7 +61,7 @@ function traverseDFS<T extends TreeNode>(
 
 /**
  * 广度优先遍历树形数据
- * @category tree/traverse
+ * @category tree
  * @param data 树形数据
  * @param callback 回调函数
  * @param childrenFieldName 子节点字段名

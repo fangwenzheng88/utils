@@ -1,4 +1,7 @@
 export * from './is'
+/**
+ * @category array
+ */
 export * as ArrayUtils from './array'
 export * from './omit'
 export * from './pick'

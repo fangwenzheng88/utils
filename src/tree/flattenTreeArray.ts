@@ -2,7 +2,7 @@ import type { TreeNode } from './types'
 
 /**
  * 扁平化树结构数组
- * @category tree/flattenTreeArray
+ * @category tree
  * @param treeData 树结构数组
  * @param childrenFieldName 子节点字段名，默认为 'children'
  * @returns 扁平化后的树结构数组

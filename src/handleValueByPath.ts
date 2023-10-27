@@ -10,8 +10,10 @@ type Data = Record<string, unknown> | unknown[]
  * @returns 返回路径对应的值
  *
  * @example
+ * ```ts
  * const obj = {a: {b: {c: 123}}};
  * const value = getValueByPath<number>(obj, 'a.b.c'); // value = 123
+ * ```
  */
 export const getValueByPath = <T = any>(obj: Data | undefined, path: string | undefined): T | undefined => {
   if (!obj || !path) {
@@ -51,19 +53,19 @@ export const getValueByPath = <T = any>(obj: Data | undefined, path: string | un
  * @param addPath 添加路径，默认：false，为true的时候会添加不存在的路径
  *
  * @example
+ * ```ts
  * const obj = {}
  * setValueByPath(obj, 'a.b.c', 'value', { addPath: true })
  * // { a: { b: { c: 'value' } } }
  *
- * @example
  * const obj = {}
  * setValueByPath(obj, 'a.b.c[0]', 'hello', { addPath: true })
  * // { a: { b: { c: ['hello'] } } }
  *
- * @example
  * const obj = { a: { b: { c: ['hello'] } } }
  * setValueByPath(obj, 'a.b.c.1', 'world')
  * // { a: { b: { c: ['hello', 'world'] } } }
+ * ```
  */
 export const setValueByPath = (obj: Data | undefined, path: string | undefined, value: any, { addPath }: { addPath?: boolean } = {}) => {
   if (!obj || !path) {

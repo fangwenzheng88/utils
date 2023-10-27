@@ -6,12 +6,12 @@ describe('getValueByPath', () => {
     const obj = {
       a: {
         b: {
-          c: 'value'
-        }
+          c: 'value',
+        },
       },
       x: {
-        y: [1, 2, 3]
-      }
+        y: [1, 2, 3],
+      },
     }
 
     expect(getValueByPath(obj, 'a.b.c')).toBe('value')

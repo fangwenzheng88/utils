@@ -8,7 +8,7 @@ describe('arrayToTree', () => {
       { id: 2, name: '部门2', pid: 1 },
       { id: 4, name: '部门4', pid: 3 },
       { id: 1, name: '部门1', pid: -1 },
-      { id: 3, name: '部门3', pid: 1 }
+      { id: 3, name: '部门3', pid: 1 },
     ]
     expect(arrayToTree(array, { key: 'id', parentKey: 'pid' })).toEqual([
       {
@@ -19,7 +19,7 @@ describe('arrayToTree', () => {
           {
             id: 2,
             name: '部门2',
-            pid: 1
+            pid: 1,
           },
           {
             id: 3,
@@ -34,14 +34,14 @@ describe('arrayToTree', () => {
                   {
                     id: 5,
                     name: '部门5',
-                    pid: 4
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
+                    pid: 4,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
     ])
   })
 
@@ -51,7 +51,7 @@ describe('arrayToTree', () => {
       { id: 2, name: '部门2', pid: 1 },
       { id: 5, name: '部门5', pid: 4 },
       { id: 4, name: '部门4', pid: 3 },
-      { id: 3, name: '部门3', pid: 1 }
+      { id: 3, name: '部门3', pid: 1 },
     ]
 
     const result = arrayToTree(array, { key: 'id', parentKey: 'pid', parentCondition: 0 })
@@ -64,7 +64,7 @@ describe('arrayToTree', () => {
           {
             id: 2,
             name: '部门2',
-            pid: 1
+            pid: 1,
           },
           {
             id: 3,
@@ -79,14 +79,14 @@ describe('arrayToTree', () => {
                   {
                     id: 5,
                     name: '部门5',
-                    pid: 4
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
+                    pid: 4,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
     ])
   })
 })

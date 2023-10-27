@@ -8,5 +8,6 @@ describe('toArray', () => {
     expect(toArray('hello')).toEqual(['hello'])
     expect(toArray(undefined)).toEqual([])
     expect(toArray(null)).toEqual([])
+    expect(toArray('')).toEqual([''])
   })
 })

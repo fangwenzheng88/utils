@@ -16,7 +16,7 @@ import {
   isExist,
   isDef,
   isUnDef,
-  isWindow
+  isWindow,
 } from '../index'
 
 describe('isArray', () => {

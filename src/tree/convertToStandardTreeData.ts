@@ -1,3 +1,6 @@
+/**
+ * @category tree
+ */
 export interface TreeDataStandardConfig<T = Record<string, any>, P = {}> {
   key?: string
   parentKey?: string
@@ -12,6 +15,9 @@ export interface TreeDataStandardConfig<T = Record<string, any>, P = {}> {
   extra?: (node: T, level: number) => P
 }
 
+/**
+ * @category tree
+ */
 export type TreeDataStandard<T = Record<string, any>, P = {}> = {
   key: string
   title: string
@@ -23,7 +29,7 @@ export type TreeDataStandard<T = Record<string, any>, P = {}> = {
 
 /**
  * 将树形数据转换为标准的树形数据结构
- * @category tree/convertToStandardTreeData
+ * @category tree
  * @param treeData 原始树形数据
  * @param config 转换配置
  * @returns 标准的树形数据结构
@@ -48,7 +54,7 @@ function convert<T extends Record<string, any>, P extends Record<string, any> = 
     children: 'children',
     extra() {
       return {} as P
-    }
+    },
   }
   const treeDataConfig: Required<TreeDataStandardConfig<T, P>> = { ...defaultConfig, ...config }
 
@@ -70,7 +76,7 @@ function convert<T extends Record<string, any>, P extends Record<string, any> = 
       data,
       children,
       level,
-      ...extraData
+      ...extraData,
     }
   })
 }

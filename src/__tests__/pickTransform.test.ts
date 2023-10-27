@@ -12,15 +12,15 @@ describe('pickTransform', () => {
     const source: Person = {
       name: 'Alice',
       age: 18,
-      location: 'New York'
+      location: 'New York',
     }
     const result = pickTransform(source, ['name', 'location'], {
-      ageStr: (val) => `${val.age}岁`
+      ageStr: (val) => `${val.age}岁`,
     })
     expect(result).toEqual({
       name: 'Alice',
       location: 'New York',
-      ageStr: '18岁'
+      ageStr: '18岁',
     })
   })
 
@@ -28,15 +28,15 @@ describe('pickTransform', () => {
     const source: Person = {
       name: 'Alice',
       age: 18,
-      location: 'New York'
+      location: 'New York',
     }
     const result = pickTransform(source, ['name', 'location'], {
-      age: (val) => `${val.age}岁`
+      age: (val) => `${val.age}岁`,
     })
     expect(result).toEqual({
       name: 'Alice',
       location: 'New York',
-      age: '18岁'
+      age: '18岁',
     })
   })
 
@@ -44,7 +44,7 @@ describe('pickTransform', () => {
     const source: Person | null = null
 
     const result = pickTransform(source, ['location'], {
-      name: (val) => val?.name.length ?? 10
+      name: (val) => val?.name.length ?? 10,
     })
     expect(result).toEqual({})
   })
@@ -53,7 +53,7 @@ describe('pickTransform', () => {
     const source: Person | undefined = undefined
 
     const result = pickTransform(source, ['location'], {
-      name: (val) => val?.name.length ?? 10
+      name: (val) => val?.name.length ?? 10,
     })
     expect(result).toEqual({})
   })
@@ -62,11 +62,11 @@ describe('pickTransform', () => {
     const source: Person = {
       name: 'Alice',
       age: 30,
-      location: 'New York'
+      location: 'New York',
     }
 
     const result = pickTransform(source, ['location'], {
-      name: (val) => val.name.length
+      name: (val) => val.name.length,
     })
     assertType<{
       location: string
@@ -80,12 +80,12 @@ describe('pickTransform', () => {
         ? {
             name: 'Alice',
             age: 30,
-            location: 'New York'
+            location: 'New York',
           }
         : null
 
     const result = pickTransform(source, ['location'], {
-      name: (val) => val.name.length
+      name: (val) => val.name.length,
     })
     assertType<{
       location?: string

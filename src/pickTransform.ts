@@ -15,7 +15,7 @@ export function pickTransform<T extends Record<string, any>, K extends keyof T, 
 
 /**
  * 从提供的对象中选择指定的字段，并可选择应用转换函数添加额外的字段。
- * @category pickTransform
+ * @category pick
  * @param source 待选择字段的对象。
  * @param keys 要选择的键数组。
  * @param transform 包含键转换函数的对象。键应与待选择的键数组对应。

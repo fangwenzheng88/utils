@@ -2,7 +2,7 @@ import type { TreeNode } from './types'
 
 /**
  * 对树形数据进行排序，并返回排序后的新数组
- * @category tree/sortTreeArray
+ * @category tree
  * @param treeData 待排序的树形数据数组
  * @param sortFunction 排序函数，用于定义排序规则
  * @param childrenFieldName 子节点字段名称，默认为 'children'
