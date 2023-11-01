@@ -118,7 +118,7 @@ export function isFunction(obj: unknown): obj is (...args: any[]) => any {
  * @returns 如果是浏览器窗口对象，则返回true；否则返回false
  */
 export function isWindow(obj: unknown): obj is Window {
-  return obj === window
+  return obj !== null && obj !== undefined && obj === (obj as any).window
 }
 
 /**
