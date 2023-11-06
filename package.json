@@ -3,46 +3,20 @@
   "type": "module",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/index.js",
-  "module": "es/index.js",
+  "main": "lib/index.cjs",
+  "module": "es/index.mjs",
   "types": "es/index.d.ts",
   "unpkg": "dist/index.umd.js",
   "jsdelivr": "dist/index.umd.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fangwenzheng88/utils.git"
+  },
+  "homepage": "https://fangwenzheng88.github.io/utils/",
   "exports": {
     ".": {
-      "types": "./es/index.d.ts",
-      "import": "./es/index.js",
-      "require": "./lib/index.js"
-    },
-    "./es": {
-      "types": "./es/index.d.ts",
-      "import": "./es/index.js"
-    },
-    "./lib": {
-      "types": "./lib/index.d.ts",
-      "require": "./lib/index.js"
-    },
-    "./es/*.js": {
-      "types": "./es/*.d.ts",
-      "import": "./es/*.js"
-    },
-    "./es/*": {
-      "types": [
-        "./es/*.d.ts",
-        "./es/*/index.d.ts"
-      ],
-      "import": "./es/*.js"
-    },
-    "./lib/*.js": {
-      "types": "./lib/*.d.ts",
-      "require": "./lib/*.js"
-    },
-    "./lib/*": {
-      "types": [
-        "./lib/*.d.ts",
-        "./lib/*/index.d.ts"
-      ],
-      "require": "./lib/*.js"
+      "import": "./es/index.mjs",
+      "require": "./lib/index.cjs"
     },
     "./*": "./*"
   },
@@ -58,7 +32,8 @@
     "lint-staged": "npx lint-staged",
     "type:check": "npx tsc --noEmit --skipLibCheck",
     "prepare": "husky install",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
+    "release": "release-it",
+    "commit": "cz"
   },
   "files": [
     "dist",
@@ -69,22 +44,24 @@
   "author": "fangwenzheng",
   "license": "ISC",
   "devDependencies": {
-    "@changesets/cli": "^2.26.2",
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
     "@devops-web/eslint-config": "^1.0.7",
+    "@release-it/conventional-changelog": "^7.0.2",
     "@rollup/plugin-commonjs": "^25.0.4",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@rushstack/eslint-patch": "^1.2.0",
     "@vitest/coverage-istanbul": "^0.33.0",
     "@vitest/ui": "^0.33.0",
-    "conventional-changelog-cli": "^4.1.0",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "dayjs": "^1.11.10",
     "eslint": "^8.39.0",
     "husky": "^8.0.3",
     "jsdom": "^22.1.0",
     "lint-staged": "^14.0.1",
     "prettier": "^2.8.8",
+    "release-it": "^16.2.1",
     "rimraf": "^5.0.1",
     "rollup": "^3.26.3",
     "rollup-plugin-dts": "^5.3.0",
@@ -106,5 +83,10 @@
       "prettier --write",
       "eslint --fix"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }

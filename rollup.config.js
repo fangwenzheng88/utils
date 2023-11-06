@@ -28,7 +28,7 @@ export default [
       {
         format: 'cjs',
         dir: 'lib',
-        entryFileNames: '[name].js',
+        entryFileNames: '[name].cjs',
         preserveModules: true,
         preserveModulesRoot: 'src',
       },
@@ -47,7 +47,7 @@ export default [
         preserveModulesRoot: 'src',
       },
     ],
-    plugins: [dts({ respectExternal: true })],
+    plugins: [dts()],
   },
   {
     input,
@@ -56,7 +56,7 @@ export default [
       {
         format: 'es',
         dir: 'es',
-        entryFileNames: '[name].js',
+        entryFileNames: '[name].mjs',
         preserveModules: true,
         preserveModulesRoot: 'src',
       },
@@ -75,6 +75,6 @@ export default [
         preserveModulesRoot: 'src',
       },
     ],
-    plugins: [dts({ respectExternal: true })],
+    plugins: [dts()],
   },
 ]
