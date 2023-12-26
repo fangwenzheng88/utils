@@ -1,5 +1,3 @@
-import { isArray, isDef } from './is'
-
 /**
  * 将输入的值转换为数组
  * @category toArray
@@ -16,12 +14,10 @@ import { isArray, isDef } from './is'
  * toArray('') // ['']
  * ```
  */
-export function toArray<T>(value: T | T[]): T[] {
-  if (isArray(value)) {
-    return value
+export function toArray<T>(value?: null | T | T[]): T[] {
+  if (value === undefined || value === null) {
+    return []
   }
-  if (isDef(value)) {
-    return [value]
-  }
-  return []
+
+  return Array.isArray(value) ? value : [value]
 }

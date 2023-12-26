@@ -160,7 +160,7 @@ export function isUndefined(obj: unknown): obj is undefined {
  * isStringNumber(NaN)
  * ```
  */
-export function isStringNumber(val: string): boolean {
+export function isStringNumber(val: unknown): boolean {
   if (!isString(val)) {
     return false
   }
