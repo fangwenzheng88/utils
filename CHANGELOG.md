@@ -1,5 +1,12 @@
 
 
+## [1.0.2](https://github.com/fangwenzheng88/utils/compare/v1.0.1...v1.0.2) (2023-12-27)
+
+
+### Features
+
+* 完善toArray和isStringNumber参数的ts类型 ([4dfb965](https://github.com/fangwenzheng88/utils/commit/4dfb9653e47ae693b7ea2c01358091a723df45c2))
+
 ## [1.0.1](https://github.com/fangwenzheng88/utils/compare/v1.0.0...v1.0.1) (2023-11-06)
 
 
