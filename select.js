@@ -28,7 +28,7 @@ function goToVersion(version) {
     window.location.href = baseUrl
     changeDevTitle()
   } else {
-    window.location.href = baseUrl + tag
+    window.location.href = baseUrl + tag + '/'
   }
 }
 
