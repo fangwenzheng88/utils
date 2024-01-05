@@ -25,10 +25,10 @@ function goToVersion(version) {
   console.log(version.target.value)
   const tag = version.target.value
   if (tag === 'dev') {
-    window.location.href = window.location.origin + baseUrl
+    window.location.href = baseUrl
     changeDevTitle()
   } else {
-    window.location.href = window.location.origin + baseUrl + tag
+    window.location.href = baseUrl + tag
   }
 }
 
