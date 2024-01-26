@@ -17,6 +17,7 @@ import {
   isDef,
   isUnDef,
   isWindow,
+  isNotEmptyArray,
 } from '../index'
 
 describe('isArray', () => {
@@ -42,6 +43,24 @@ describe('isArray', () => {
     expect(isArray(123)).toBe(false)
     expect(isArray(true)).toBe(false)
     expect(isArray({})).toBe(false)
+  })
+})
+
+describe('isNotEmptyArray', () => {
+  test('非空数组，应返回 true', () => {
+    expect(isNotEmptyArray([1])).toBe(true)
+  })
+
+  test('空数组，应返回 false', () => {
+    expect(isNotEmptyArray([])).toBe(false)
+  })
+
+  test('对于其他类型，应返回 false', () => {
+    expect(isNotEmptyArray(null)).toBe(false)
+    expect(isNotEmptyArray(undefined)).toBe(false)
+    expect(isNotEmptyArray(123)).toBe(false)
+    expect(isNotEmptyArray(true)).toBe(false)
+    expect(isNotEmptyArray({})).toBe(false)
   })
 })
 

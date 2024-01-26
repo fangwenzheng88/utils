@@ -122,6 +122,30 @@ export function isWindow(obj: unknown): obj is Window {
 }
 
 /**
+ * 判断是是客户端
+ * @category is
+ * @returns window存在，则返回true；否则返回false
+ */
+export function isClient(): boolean {
+  return typeof window !== 'undefined' && typeof document !== 'undefined'
+}
+
+/**
+ * 判断是不是ios
+ * @category is
+ */
+export function isIOS(): boolean {
+  return !!(
+    isClient() &&
+    window?.navigator?.userAgent &&
+    (/iP(ad|hone|od)/.test(window.navigator.userAgent) ||
+      // The new iPad Pro Gen3 does not identify itself as iPad, but as Macintosh.
+      // https://github.com/vueuse/vueuse/issues/3577
+      (window?.navigator?.maxTouchPoints > 2 && /iPad|Macintosh/.test(window?.navigator.userAgent)))
+  )
+}
+
+/**
  * 判断给定的对象是否为undefined类型
  * @category is
  * @param obj 要判断的对象
@@ -222,4 +246,14 @@ export function isDef<T>(obj: T): obj is NonNullable<T> {
  */
 export function isUnDef(obj: unknown): obj is undefined | null {
   return obj === undefined || obj === null
+}
+
+/**
+ * 判断给定对象是否为非空数组
+ * @category is
+ * @param obj 要判断的对象
+ * @returns 如果为非空数组，则返回true；否则返回false
+ */
+export function isNotEmptyArray(value: unknown): value is any[] {
+  return isArray(value) && value.length !== 0
 }
