@@ -1,4 +1,4 @@
-const versions = ["dev","v1.0.0","v1.0.1","v1.0.2"]
+const versions = ["dev","v1.0.0","v1.0.1","v1.0.2","v1.0.3"]
 const title = document.querySelector('#tsd-search a.title')
 const baseUrl = '/utils/'
 
