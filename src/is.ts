@@ -112,6 +112,16 @@ export function isFunction(obj: unknown): obj is (...args: any[]) => any {
 }
 
 /**
+ * 判断给定的对象是否为Symbol
+ * @category is
+ * @param obj
+ * @returns
+ */
+export function isSymbol(obj: any): obj is Symbol {
+  return opt.call(obj) === '[object Symbol]'
+}
+
+/**
  * 判断给定的对象是否为浏览器窗口对象
  * @category is
  * @param obj 要判断的对象
