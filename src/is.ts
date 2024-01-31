@@ -87,7 +87,7 @@ export function isNumber(obj: unknown): obj is number {
  * @param obj 要判断的对象
  * @returns 如果是正则表达式类型，则返回true；否则返回false
  */
-export function isRegExp(obj: unknown) {
+export function isRegExp(obj: unknown): obj is RegExp {
   return opt.call(obj) === '[object RegExp]'
 }
 
@@ -97,7 +97,7 @@ export function isRegExp(obj: unknown) {
  * @param obj 要判断的对象
  * @returns 如果是日期类型，则返回true；否则返回false
  */
-export function isDate(obj: unknown) {
+export function isDate(obj: unknown): obj is Date {
   return opt.call(obj) === '[object Date]'
 }
 
