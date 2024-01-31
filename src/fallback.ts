@@ -6,7 +6,7 @@ import { isArray, isNumber, isString, isStringNumber, isUnDef } from './is'
  * @category fallback
  * @param array 原数组
  * @param fallback 回退数组
- * @returns 不为非空数组，否则返回回退数组
+ * @returns 不为非空数组，否则返回回退数组的浅拷贝
  *
  * @example
  * ```ts
@@ -14,6 +14,11 @@ import { isArray, isNumber, isString, isStringNumber, isUnDef } from './is'
  * fallbackArray([], [4, 5]) // [4, 5]
  * fallbackArray(undefined, [4, 5]) // [4, 5]
  * fallbackArray(null, [4, 5]) // [4, 5]
+ *
+ * // 非数组/null/undefined类型数据，ts会提示异常
+ * fallbackArray('', [4, 5]) // [4, 5]
+ * fallbackArray(1, [4, 5]) // [4, 5]
+ * fallbackArray({}, [4, 5]) // [4, 5]
  * ```
  */
 export function fallbackArray<T>(array: T[] | undefined | null, fallback: T[] = []): T[] {
@@ -69,7 +74,7 @@ fallbackString.DEFAULT_FALLBACK = ''
  * 返回具有回退（fallback）行为的数字
  * @category fallback
  * @param str 数字、字符串、null、undefined
- * @param fallback 回退数字
+ * @param fallback 回退数字，默认：0
  * @returns 不为非NaN的数字或数字格式的字符串，则返回回退数字
  *
  * @example
@@ -77,10 +82,12 @@ fallbackString.DEFAULT_FALLBACK = ''
  * fallbackNumber(100) // 100
  * fallbackNumber('100') // 100
  *
+ * // 返回回退数字：0
  * fallbackNumber(undefined) // 0
  * fallbackNumber(null) // 0
  * fallbackNumber('') // 0
  *
+ * // 指定回退数字：1
  * fallbackNumber(100, 1) // 100
  * fallbackNumber('100', 1) // 100
  * fallbackNumber(NaN, 1) // 1

@@ -122,6 +122,18 @@ export function isSymbol(obj: any): obj is Symbol {
 }
 
 /**
+ * 判断给定的对象是否为undefined类型
+ * @category is
+ * @param obj 要判断的对象
+ * @returns 如果是undefined类型，则返回true；否则返回false
+ */
+export function isUndefined(obj: unknown): obj is undefined {
+  return obj === undefined
+}
+
+/* ****************************************************** */
+
+/**
  * 判断给定的对象是否为浏览器窗口对象
  * @category is
  * @param obj 要判断的对象
@@ -153,16 +165,6 @@ export function isIOS(): boolean {
       // https://github.com/vueuse/vueuse/issues/3577
       (window?.navigator?.maxTouchPoints > 2 && /iPad|Macintosh/.test(window?.navigator.userAgent)))
   )
-}
-
-/**
- * 判断给定的对象是否为undefined类型
- * @category is
- * @param obj 要判断的对象
- * @returns 如果是undefined类型，则返回true；否则返回false
- */
-export function isUndefined(obj: unknown): obj is undefined {
-  return obj === undefined
 }
 
 /**
@@ -204,6 +206,7 @@ export function isStringNumber(val: unknown): boolean {
 /**
  * 确定它的参数是否是一个数字。
  * 方法检查它的参数是否代表一个数值。如果是这样，它返回 true。否则，它返回false。该参数可以是任何类型的
+ * @category is
  * @param val 任何类型
  *
  * @example
