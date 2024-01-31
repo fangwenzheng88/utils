@@ -108,7 +108,7 @@ export function isDate(obj: unknown): obj is Date {
  * @returns 如果是函数类型，则返回true；否则返回false
  */
 export function isFunction(obj: unknown): obj is (...args: any[]) => any {
-  return typeof obj === 'function'
+  return opt.call(obj) === '[object Function]'
 }
 
 /**
