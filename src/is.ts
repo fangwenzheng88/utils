@@ -192,6 +192,39 @@ export function isStringNumber(val: unknown): boolean {
 }
 
 /**
+ * 确定它的参数是否是一个数字。
+ * 方法检查它的参数是否代表一个数值。如果是这样，它返回 true。否则，它返回false。该参数可以是任何类型的
+ * @param val 任何类型
+ *
+ * @example
+ * ```ts
+ * // true
+ * isNumeric("-10");
+ * isNumeric(16);
+ * isNumeric(0xFF);
+ * isNumeric("0xFF");
+ * isNumeric("8e5");
+ * isNumeric(3.1415);
+ * isNumeric(+10);
+ * isNumeric(0144);
+ *
+ * // false
+ * isNumeric("");
+ * isNumeric({});
+ * isNumeric(NaN);
+ * isNumeric(null);
+ * isNumeric(true);
+ * isNumeric(Infinity);
+ * isNumeric(undefined);
+ * ```
+ */
+export function isNumeric(val: unknown): boolean {
+  // @ts-ignore
+  // eslint-disable-next-line no-restricted-globals
+  return !isNaN(Number.parseFloat(val)) && isFinite(val)
+}
+
+/**
  * 判断给定的对象是否为空普通对象，即不包含任何属性
  * @category is
  * @param obj 要判断的对象

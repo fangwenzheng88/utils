@@ -8,6 +8,7 @@ import {
   isString,
   isNumber,
   isStringNumber,
+  isNumeric,
   isRegExp,
   isDate,
   isUndefined,
@@ -325,20 +326,36 @@ describe('isStringNumber', () => {
   })
 
   test('对于非字符串值，应返回 false', () => {
-    // @ts-ignore
     expect(isStringNumber(null)).toBe(false)
-    // @ts-ignore
     expect(isStringNumber(undefined)).toBe(false)
-    // @ts-ignore
     expect(isStringNumber(123)).toBe(false)
-    // @ts-ignore
     expect(isStringNumber(true)).toBe(false)
-    // @ts-ignore
     expect(isStringNumber({})).toBe(false)
-    // @ts-ignore
     expect(isStringNumber([])).toBe(false)
-    // @ts-ignore
     expect(isStringNumber(NaN)).toBe(false)
+  })
+})
+
+describe('isNumeric', () => {
+  test('返回 true', () => {
+    expect(isNumeric('-10')).toBe(true)
+    expect(isNumeric('16')).toBe(true)
+    expect(isNumeric(0xff)).toBe(true)
+    expect(isNumeric('0xFF')).toBe(true)
+    expect(isNumeric('8e5')).toBe(true)
+    expect(isNumeric(3.1415)).toBe(true)
+    expect(isNumeric(+10)).toBe(true)
+    expect(isNumeric(0o144)).toBe(true)
+  })
+
+  test('返回 false', () => {
+    expect(isNumeric('')).toBe(false)
+    expect(isNumeric({})).toBe(false)
+    expect(isNumeric(NaN)).toBe(false)
+    expect(isNumeric(null)).toBe(false)
+    expect(isNumeric(true)).toBe(false)
+    expect(isNumeric(Infinity)).toBe(false)
+    expect(isNumeric(undefined)).toBe(false)
   })
 })
 
