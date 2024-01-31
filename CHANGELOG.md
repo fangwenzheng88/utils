@@ -1,5 +1,15 @@
 
 
+## [1.0.4](https://github.com/fangwenzheng88/utils/compare/v1.0.3...v1.0.4) (2024-01-31)
+
+
+### Features
+
+* 修改isFunction的实现方式 ([71cb42b](https://github.com/fangwenzheng88/utils/commit/71cb42b975cdbe68a5c82645525f6d55434bf78a))
+* 增加isNumeric函数 ([1d4bf92](https://github.com/fangwenzheng88/utils/commit/1d4bf9229268f678d6c8f7e022442f7c64218cda))
+* 增加isSymbol函数 ([0677220](https://github.com/fangwenzheng88/utils/commit/067722099d50aa31276eedcab28281e3a379d040))
+* isDate/isRegExp增加类型谓词 ([c5f2016](https://github.com/fangwenzheng88/utils/commit/c5f20169e0464c5f9e607d30b34618c6d156b4e2))
+
 ## [1.0.3](https://github.com/fangwenzheng88/utils/compare/v1.0.2...v1.0.3) (2024-01-30)
 
 
