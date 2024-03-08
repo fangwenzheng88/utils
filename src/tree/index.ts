@@ -6,5 +6,6 @@ export * from './convertToStandardTreeData'
 export * from './arrayToTree'
 export * from './flattenTreeArray'
 export * from './treeArrayToMap'
+export * from './filterTreeWithoutEmptyChildren'
 
 export type * from './types'
