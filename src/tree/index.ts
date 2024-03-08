@@ -5,5 +5,6 @@ export * from './find'
 export * from './convertToStandardTreeData'
 export * from './arrayToTree'
 export * from './flattenTreeArray'
+export * from './treeArrayToMap'
 
 export type * from './types'
