@@ -1,5 +1,13 @@
 
 
+## [1.0.5](https://github.com/fangwenzheng88/utils/compare/v1.0.4...v1.0.5) (2024-03-08)
+
+
+### Features
+
+* 新增filterTreeWithoutEmptyChildren函数 ([41bf667](https://github.com/fangwenzheng88/utils/commit/41bf6673b82a5580df3a23e8cf39765a56fd508a))
+* 新增treeArrayToMap函数 ([8383fa1](https://github.com/fangwenzheng88/utils/commit/8383fa15c96d99e15af6ee756d0c275188895e7a))
+
 ## [1.0.4](https://github.com/fangwenzheng88/utils/compare/v1.0.3...v1.0.4) (2024-01-31)
 
 
