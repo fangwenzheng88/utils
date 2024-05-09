@@ -341,7 +341,7 @@ describe('isNumeric', () => {
     expect(isNumeric('-10')).toBe(true)
     expect(isNumeric('16')).toBe(true)
     expect(isNumeric(0xff)).toBe(true)
-    expect(isNumeric('0xFF')).toBe(true)
+    expect(isNumeric('0xff')).toBe(true)
     expect(isNumeric('8e5')).toBe(true)
     expect(isNumeric(3.1415)).toBe(true)
     expect(isNumeric(+10)).toBe(true)

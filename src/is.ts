@@ -215,12 +215,12 @@ export function isStringNumber(val: unknown): boolean {
  * // true
  * isNumeric("-10");
  * isNumeric(16);
- * isNumeric(0xFF);
- * isNumeric("0xFF");
+ * isNumeric(0xff);
+ * isNumeric("0xff");
  * isNumeric("8e5");
  * isNumeric(3.1415);
  * isNumeric(+10);
- * isNumeric(0144);
+ * isNumeric(0o144);
  *
  * // false
  * isNumeric("");
