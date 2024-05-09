@@ -6,6 +6,42 @@ import type { TreeNode } from './types'
  * @param treeDataArr - 需要过滤的树形数据数组
  * @param childrenFieldName - 子节点字段名，默认为 'children'
  * @returns 新的树形数据数组，其中不包含任何子节点为空的节点
+ *
+ * @example
+ * ```ts
+ * filterTreeWithoutEmptyChildren(
+ * [
+ *   {
+ *     key: '1',
+ *     children: [
+ *       {
+ *         key: '1-1',
+ *       },
+ *       {
+ *         key: '1-2',
+ *         children: [],
+ *       },
+ *     ],
+ *   },
+ *   {
+ *     key: '2',
+ *     children: [],
+ *   },
+ * ]
+ * )
+ *
+ * 输出：
+ * [
+ *   {
+ *     key: '1',
+ *     children: [
+ *       {
+ *         key: '1-1',
+ *       },
+ *     ],
+ *   }
+ * ]
+ * ```
  */
 export function filterTreeWithoutEmptyChildren<T extends TreeNode>(treeDataArr: T[], childrenFieldName: keyof T = 'children'): T[] {
   const filteredNodes: T[] = []
