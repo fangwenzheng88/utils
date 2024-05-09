@@ -1,5 +1,17 @@
 
 
+## [1.0.6](https://github.com/fangwenzheng88/utils/compare/v1.0.5...v1.0.6) (2024-05-09)
+
+
+### Features
+
+* **fallback:** 修改fallbackNumber/fallbackString的实现 ([41dcb76](https://github.com/fangwenzheng88/utils/commit/41dcb766d97306ab71a435f7765391a06817a484))
+
+
+### BREAKING CHANGES
+
+* **fallback:** 删除fallbackString.DEFAULT_FALLBACK全局配置
+
 ## [1.0.5](https://github.com/fangwenzheng88/utils/compare/v1.0.4...v1.0.5) (2024-03-08)
 
 
