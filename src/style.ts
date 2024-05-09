@@ -1,5 +1,5 @@
 import * as CSS from 'csstype'
-import { isNumber, isObject, isString, isStringNumber, isUnDef } from './is'
+import { isObject, isString, isNumeric, isUnDef } from './is'
 import { entriesOf, keysOf } from './objects'
 
 export interface CSSProperties extends CSS.Properties<string | number>, CSS.PropertiesHyphen<string | number> {
@@ -115,7 +115,7 @@ export function addStyleUnit(value?: string | number | null, defaultUnit = 'px')
   if (isUnDef(value) || value === '') {
     return ''
   }
-  if ((isNumber(value) && !Number.isNaN(value)) || isStringNumber(value)) {
+  if (isNumeric(value)) {
     return `${Number(value)}${defaultUnit}`
   }
   if (isString(value)) {
