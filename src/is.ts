@@ -169,6 +169,7 @@ export function isIOS(): boolean {
 
 /**
  * 判断给定的字符串是否可以转换为数字
+ * @deprecated
  * @category is
  * @param val 要判断的字符串
  * @returns 如果可以转换为数字，则返回true；否则返回false
