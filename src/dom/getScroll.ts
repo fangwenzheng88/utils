@@ -1,6 +1,6 @@
-import { isClient, isWindow } from './is'
+import { isClient, isWindow } from '../is'
 
-export function getScroll(target: HTMLElement | Window | Document | null, top: boolean): number {
+function getScroll(target: HTMLElement | Window | Document | null, top: boolean): number {
   if (!isClient()) {
     return 0
   }
@@ -28,20 +28,20 @@ export function getScroll(target: HTMLElement | Window | Document | null, top: b
 }
 
 /**
- * 获取指定元素顶部滚动距离
+ * 获取指定元素或窗口的滚动顶部位置。
  * @category dom
- * @param target
- * @returns
+ * @param target 指定的滚动目标，可以是HTMLElement、Window、Document或null。
+ * @returns 返回目标的滚动顶部位置，如果目标无效，则返回0。
  */
 export function getScrollTop(target: HTMLElement | Window | Document | null): number {
   return getScroll(target, true)
 }
 
 /**
- * 获取指定元素左侧滚动距离
+ * 获取指定元素或窗口的左滚动位置。
  * @category dom
- * @param target
- * @returns
+ * @param target 指定的滚动元素、窗口或文档。可为 null。
+ * @returns 返回目标的左滚动位置的数字值。
  */
 export function getScrollLeft(target: HTMLElement | Window | Document | null): number {
   return getScroll(target, false)

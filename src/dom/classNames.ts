@@ -1,4 +1,4 @@
-import { isArray, isString, isObject } from './is'
+import { isArray, isString, isObject } from '../is'
 
 /**
  * 数组/对象转className

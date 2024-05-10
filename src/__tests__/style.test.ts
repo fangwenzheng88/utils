@@ -1,5 +1,5 @@
 import { test, expect, describe } from 'vitest'
-import { addStyleUnit } from '../style'
+import { addStyleUnit } from '../dom/style'
 
 describe('style', () => {
   test('addStyleUnit', () => {
