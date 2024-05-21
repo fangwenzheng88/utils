@@ -1,5 +1,12 @@
 
 
+## [1.0.7](https://github.com/fangwenzheng88/utils/compare/v1.0.6...v1.0.7) (2024-05-21)
+
+
+### Features
+
+* **dom:** 增加一些dom工具函数 ([611401d](https://github.com/fangwenzheng88/utils/commit/611401dec3896d4ec4527a7b17eb469293c74f70))
+
 ## [1.0.6](https://github.com/fangwenzheng88/utils/compare/v1.0.5...v1.0.6) (2024-05-09)
 
 
