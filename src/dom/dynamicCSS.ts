@@ -62,10 +62,13 @@ function findStyles(container: ContainerType) {
 }
 
 /**
+ * 向文档中注入CSS代码
+ *
  * @category dom
- * @param css
- * @param option
- * @returns
+ * @param css 需要注入的CSS代码
+ * @param option 可选配置项，包括CSP nonce和插入位置
+ *
+ * @returns 注入的style节点或在DOM不可用时返回null
  */
 export function injectCSS(css: string, option: Options = {}) {
   if (!canUseDom()) {
@@ -113,9 +116,11 @@ function findExistNode(key: string, option: Options = {}) {
 }
 
 /**
+ * 移除与特定键关联的CSS样式元素。
+ *
  * @category dom
- * @param key
- * @param option
+ * @param key - 用于识别要移除的CSS样式的唯一键。
+ * @param option - 可选参数，提供额外的配置选项，默认为空对象。
  */
 export function removeCSS(key: string, option: Options = {}) {
   const existNode = findExistNode(key, option)
@@ -152,11 +157,18 @@ export function clearContainerCache() {
 }
 
 /**
+ * 更新或插入CSS节点
+ *
+ * 此函数首先尝试查找是否存在指定key的CSS节点如果存在，则根据传入的CSS内容和配置信息进行更新，
+ * 包括但不限于设置或更新内容安全策略（CSP）的nonce值和CSS内容如果不存在，则创建一个新的CSS节点，
+ * 并设置其内容为传入的CSS内容
+ *
  * @category dom
- * @param css
- * @param key
- * @param option
- * @returns
+ * @param {string} css - 需要更新的CSS内容
+ * @param {string} key - CSS节点的唯一标识
+ * @param {Options} option - 可选的配置对象，默认为空对象
+ *
+ * @returns {HTMLElement} 更新后的或新创建的CSS节点
  */
 export function updateCSS(css: string, key: string, option: Options = {}) {
   const container = getContainer(option)

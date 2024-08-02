@@ -1,11 +1,16 @@
 import type { TreeNode } from './types'
 
 /**
- * 过滤树形数据，移除所有子节点为空的节点
+ * 过滤掉树状数据结构中没有子节点的节点
+ *
+ * 此函数接收一个树状数据结构的数组和一个可选的子节点字段名称作为参数
+ * 它会遍历数组中的每个节点，如果节点有子节点（且子节点非空），则将该节点及其过滤后的子节点数组一起加入到结果数组中
+ * 如果节点没有子节点，则直接将该节点加入到结果数组中
+ *
  * @category tree
- * @param treeDataArr - 需要过滤的树形数据数组
- * @param childrenFieldName - 子节点字段名，默认为 'children'
- * @returns 新的树形数据数组，其中不包含任何子节点为空的节点
+ * @param treeDataArr 树状数据结构的数组
+ * @param childrenFieldName 子节点字段名称，默认为'children'
+ * @returns 过滤后的树状数据结构数组
  *
  * @example
  * ```ts

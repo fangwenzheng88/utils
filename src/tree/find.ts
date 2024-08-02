@@ -2,6 +2,7 @@ import type { TreeNode } from './types'
 
 /**
  * 查找单个节点的函数
+ *
  * @category tree
  * @param nodes 节点数组
  * @param callback 回调函数，判断节点是否满足条件
@@ -28,6 +29,7 @@ export function findTreeNode<T extends TreeNode>(nodes: T[], callback: (node: T)
 
 /**
  * 查找多个节点的函数
+ *
  * @category tree
  * @param nodes 节点数组
  * @param callback 回调函数，判断节点是否满足条件
@@ -54,6 +56,7 @@ export function findTreeNodes<T extends TreeNode>(nodes: T[], callback: (node: T
 
 /**
  * 查找符合条件节点的父节点及祖先节点
+ *
  * @category tree
  * @param nodes 节点数组
  * @param callback 回调函数，判断节点是否满足条件，确保只有一个节点符合条件，如果多个节点符合条件，会返回多个节点的父节点及祖先节点
@@ -82,11 +85,12 @@ export function findTreeParents<T extends TreeNode>(nodes: readonly T[], callbac
 
 /**
  * 查找符合条件节点的父节点
+ *
  * @category tree
  * @param nodes 节点数组
  * @param callback 回调函数，判断节点是否满足条件，确保只有一个节点符合条件，如果多个节点符合条件，会返回多个节点的父节点
  * @param childrenFieldName 子节点数组字段名，默认为 'children'
- * @returns 满足条件的父节点数组
+ * @returns 满足条件节点的父节点
  */
 export function findTreeParent<T extends TreeNode>(
   nodes: readonly T[],
