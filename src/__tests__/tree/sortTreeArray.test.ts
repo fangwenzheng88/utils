@@ -38,6 +38,14 @@ const treeDataArr: TreeNode[] = [
   },
 ]
 describe('sortTreeArray', () => {
+  test('排序前后不会修改源数组', () => {
+    const originalArr = JSON.parse(JSON.stringify(treeDataArr))
+    sortTreeArray(treeDataArr, (a, b) => {
+      return a.id - b.id // 按 id 升序排序
+    })
+    expect(treeDataArr).toEqual(originalArr)
+  })
+
   test('验证排序是否有效', () => {
     const result = sortTreeArray(treeDataArr, (a, b) => {
       return a.id - b.id // 按 id 升序排序
@@ -72,14 +80,6 @@ describe('sortTreeArray', () => {
         ],
       },
     ])
-  })
-
-  test('排序前后数组不变', () => {
-    const originalArr = [...treeDataArr]
-    sortTreeArray(treeDataArr, (a, b) => {
-      return a.id - b.id // 按 id 升序排序
-    })
-    expect(treeDataArr).toEqual(originalArr)
   })
 
   test('空数组返回空数组', () => {
