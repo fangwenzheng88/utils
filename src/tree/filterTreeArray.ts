@@ -27,40 +27,18 @@ import type { TreeNode } from './types'
  * [{key: '1',children: [{key: '1-2',children: [{key: '1-2-1'}]}]}]
  * ```
  */
-export function filterTreeArray<T extends TreeNode>(
-  treeDataArr: readonly T[],
-  filterFn: (node: T, parentNodes: T[]) => boolean,
-  childrenFieldName: keyof T = 'children'
-): T[] {
-  return filterTreeDataRecursive(treeDataArr, filterFn, [], childrenFieldName)
-}
-
-/**
- * 内部递归函数，实际用于过滤树形结构数据的节点
- * @param treeDataArr 树形结构数据数组
- * @param filterFn 过滤函数，用于判断节点是否符合条件，函数返回布尔值
- * @param parentNodes 父节点数组
- * @param childrenFieldName 子节点的字段名，默认为 'children'
- * @returns 过滤后的节点数组
- */
-function filterTreeDataRecursive<T extends TreeNode>(
-  treeDataArr: readonly T[],
-  filterFn: (node: T, parentNodes: T[]) => boolean,
-  parentNodes: T[] = [],
-  childrenFieldName: keyof T = 'children'
-): T[] {
+export function filterTreeArray<T extends TreeNode>(treeDataArr: readonly T[], filterFn: (node: T) => boolean, childrenFieldName: keyof T = 'children'): T[] {
   const filteredNodes: T[] = []
   for (const node of treeDataArr) {
     const remainingNode = { ...node }
-    const currentParentNodes = [...parentNodes, node]
 
-    if (filterFn(node, currentParentNodes)) {
+    if (filterFn(node)) {
       const filteredNode: T = { ...remainingNode }
       filteredNodes.push(filteredNode)
     } else {
       const children = node[childrenFieldName]
       if (Array.isArray(children) && children.length > 0) {
-        const filteredChildren = filterTreeDataRecursive(children, filterFn, currentParentNodes, childrenFieldName)
+        const filteredChildren = filterTreeArray(children, filterFn, childrenFieldName)
 
         if (filteredChildren.length > 0) {
           const remainingNodeWithFilteredChildren = {

@@ -2,104 +2,82 @@ import type { TreeNode } from './types'
 
 /**
  * 深度优先遍历树形数据
+ *
  * @category tree
  * @param data 树形数据
  * @param callback 回调函数
  * @param childrenFieldName 子节点字段名
  * @param executeCallbackAfter callback的执行时机
  */
-export function traverseTreeDFS<T extends TreeNode>(data: T[], callback?: (node: T, parentNodes: T[]) => void, childrenFieldName: keyof T = 'children') {
-  traverseDFS(data, callback, childrenFieldName, [], false)
+export function traverseTreeDFS<T extends TreeNode>(data: T[], callback?: (node: T) => void, childrenFieldName: keyof T = 'children') {
+  traverseDFS(data, callback, childrenFieldName, false)
 }
 
 /**
  * 深度优先遍历树形数据
+ *
  * @category tree
  * @param data 树形数据
  * @param callback 回调函数
  * @param childrenFieldName 子节点字段名
  * @param executeCallbackAfter callback的执行时机
  */
-export function traverseTreeDFSCallbackAfter<T extends TreeNode>(
-  data: T[],
-  callback?: (node: T, parentNodes: T[]) => void,
-  childrenFieldName: keyof T = 'children'
-) {
-  return traverseDFS(data, callback, childrenFieldName, [], true)
+export function traverseTreeDFSCallbackAfter<T extends TreeNode>(data: T[], callback?: (node: T) => void, childrenFieldName: keyof T = 'children') {
+  return traverseDFS(data, callback, childrenFieldName, true)
 }
 
 /**
  * 深度优先遍历树形数据
+ *
+ * @category tree
  * @param data 树形数据
  * @param callback 回调函数
  * @param childrenFieldName 子节点字段名
- * @param parentNodes 父节点数组
  * @param executeCallbackAfter callback的执行时机
  */
-function traverseDFS<T extends TreeNode>(
-  data: T[],
-  callback?: (node: T, parentNodes: T[]) => void,
-  childrenFieldName: keyof T = 'children',
-  parentNodes: T[] = [],
-  executeCallbackAfter = false
-) {
+function traverseDFS<T extends TreeNode>(data: T[], callback?: (node: T) => void, childrenFieldName: keyof T = 'children', executeCallbackAfter = false) {
   for (const node of data) {
     if (callback && !executeCallbackAfter) {
-      callback(node, parentNodes)
+      callback(node)
     }
 
     const children = node[childrenFieldName] as T[]
     if (Array.isArray(children)) {
-      traverseDFS(children, callback, childrenFieldName, [node, ...parentNodes], executeCallbackAfter)
+      traverseDFS(children, callback, childrenFieldName, executeCallbackAfter)
     }
 
     if (callback && executeCallbackAfter) {
-      callback(node, parentNodes)
+      callback(node)
     }
   }
 }
 
 /**
  * 广度优先遍历树形数据
+ *
  * @category tree
  * @param data 树形数据
  * @param callback 回调函数
  * @param childrenFieldName 子节点字段名
  */
-export function traverseTreeBFS<T extends TreeNode>(data: T[], callback?: (node: T, parentNodes: T[]) => void, childrenFieldName: keyof T = 'children') {
-  traverseBFS(data, callback, childrenFieldName, [])
-}
-
-/**
- * 广度优先遍历树形数据
- * @param data 树形数据
- * @param callback 回调函数
- * @param childrenFieldName 子节点字段名
- * @param parentNodes 父节点数组
- */
-function traverseBFS<T extends TreeNode>(
-  data: T[],
-  callback?: (node: T, parentNodes: T[]) => void,
-  childrenFieldName: keyof T = 'children',
-  parentNodes: T[] = []
-) {
-  const queue: { node: T; parents: T[] }[] = []
+export function traverseTreeBFS<T extends TreeNode>(data: T[], callback?: (node: T) => void, childrenFieldName: keyof T = 'children') {
+  const queue: T[] = []
 
   for (const node of data) {
-    queue.push({ node, parents: parentNodes })
+    queue.push(node)
   }
 
   while (queue.length > 0) {
-    const { node, parents } = queue.shift()!
+    const node = queue.shift()!
 
     if (callback) {
-      callback(node, parents)
+      callback(node)
     }
 
     const children = node[childrenFieldName] as T[]
     if (Array.isArray(children)) {
       for (const child of children) {
-        queue.push({ node: child, parents: [node, ...parents] })
+        queue.push(child)
       }
     }
   }

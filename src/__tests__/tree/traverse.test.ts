@@ -39,11 +39,8 @@ const treeDataArr = [
 describe('traverseTreeBFS', () => {
   test('广度优先', () => {
     const result: string[] = []
-    traverseTreeBFS(treeDataArr, (node, [parentNode]) => {
+    traverseTreeBFS(treeDataArr, (node) => {
       result.push(node.key)
-      console.log(node)
-      console.log(parentNode)
-      console.log('--------------------------')
     })
     expect(result).toEqual(['1', '2', '1-1', '1-2', '2-1', '1-2-1', '1-2-2', '2-1-1'])
   })
@@ -78,11 +75,8 @@ describe('traverseTreeBFS', () => {
 describe('traverseTreeDFS', () => {
   test('深度优先，callback在子节点遍历前执行', () => {
     const result: string[] = []
-    traverseTreeDFS(treeDataArr, (node, [parentNode]) => {
+    traverseTreeDFS(treeDataArr, (node) => {
       result.push(node.key)
-      console.log(node)
-      console.log(parentNode)
-      console.log('--------------------------')
     })
     expect(result).toEqual(['1', '1-1', '1-2', '1-2-1', '1-2-2', '2', '2-1', '2-1-1'])
   })
