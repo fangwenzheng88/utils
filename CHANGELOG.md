@@ -1,5 +1,19 @@
 
 
+## [1.0.8](https://github.com/fangwenzheng88/utils/compare/v1.0.7...v1.0.8) (2024-08-07)
+
+
+### Bug Fixes
+
+* sortTreeArray会修改原数组children字段的问题 ([1634550](https://github.com/fangwenzheng88/utils/commit/16345507500561d798dcd2bb4826803025854b79))
+* ts读取types异常 ([b7df92b](https://github.com/fangwenzheng88/utils/commit/b7df92b3a2b2f41846364d65047ec8ac59395758))
+
+
+### Features
+
+* 删除filterTreeArray/traverseTreeDFS/traverseTreeDFSCallbackAfter/traverseTreeBFS函数callback第二个参数 ([86425f2](https://github.com/fangwenzheng88/utils/commit/86425f28f8784390296921926b7f91c23bf7cfa9))
+* 新增filterTreeArray2/filterTreeArray3两个函数 ([df0677b](https://github.com/fangwenzheng88/utils/commit/df0677b53e9e271a99358e63a70ea676f44cd4d3))
+
 ## [1.0.7](https://github.com/fangwenzheng88/utils/compare/v1.0.6...v1.0.7) (2024-05-21)
 
 
