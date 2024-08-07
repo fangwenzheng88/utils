@@ -19,13 +19,20 @@
 <ul class="tsd-signatures">
 <li class="tsd-signature tsd-anchor-link" id="getClientXY"><span class="tsd-kind-call-signature">get<wbr/>ClientXY</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">event</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">clientX</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">clientY</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span><a href="#getClientXY" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>根据传入的事件对象获取客户端的 XY 坐标</p>
+<p>该函数旨在处理鼠标和触摸事件，统一获取客户端坐标的方式
+通过判断事件类型，分别处理鼠标事件和触摸事件，以确保在不同输入设备上的一致性</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
 <h5><span class="tsd-kind-parameter">event</span>: <span class="tsd-signature-type ">MouseEvent</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type ">TouchEvent</span></h5>
+<div class="tsd-comment tsd-typography"><p>鼠标事件或触摸事件对象</p>
+</div>
 <div class="tsd-comment tsd-typography"></div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">clientX</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">clientY</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span></h4>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">clientX</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">clientY</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span></h4><p>返回包含客户端 XY 坐标的对象</p>
+
 <ul class="tsd-parameters">
 <li class="tsd-parameter">
 <h5><span class="tsd-kind-property">clientX</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5></li>
@@ -33,7 +40,7 @@
 <h5><span class="tsd-kind-property">clientY</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5></li></ul>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/fangwenzheng88/utils/blob/e24a7df/src/dom/position.ts#L90">src/dom/position.ts:90</a></li></ul></aside></li></ul></section></div>
+<li>Defined in <a href="https://github.com/fangwenzheng88/utils/blob/b7df92b/src/dom/position.ts#L116">src/dom/position.ts:116</a></li></ul></aside></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

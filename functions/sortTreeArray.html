@@ -19,7 +19,10 @@
 <ul class="tsd-signatures">
 <li class="tsd-signature tsd-anchor-link" id="sortTreeArray"><span class="tsd-kind-call-signature">sort<wbr/>Tree<wbr/>Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type tsd-kind-type-parameter">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">treeData</span>, <span class="tsd-kind-parameter">sortFunction</span>, <span class="tsd-kind-parameter">childrenFieldName</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type tsd-kind-type-parameter">T</span><span class="tsd-signature-symbol">[]</span><a href="#sortTreeArray" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>对树形数据进行排序，并返回排序后的新数组</p>
+<div class="tsd-comment tsd-typography"><p>递归地对树状数组进行排序</p>
+<p>此方法不会修改原始数组，会返回数组每一项的浅拷贝
+此函数接收一个树状数组、一个用于比较节点的排序函数以及一个可选的子节点字段名
+它首先对整个树进行排序，然后递归地对每个节点的子节点进行排序</p>
 </div>
 <section class="tsd-panel">
 <h4>Type Parameters</h4>
@@ -31,12 +34,12 @@
 <ul class="tsd-parameter-list">
 <li>
 <h5><span class="tsd-kind-parameter">treeData</span>: <span class="tsd-signature-symbol">readonly </span><span class="tsd-signature-type tsd-kind-type-parameter">T</span><span class="tsd-signature-symbol">[]</span></h5>
-<div class="tsd-comment tsd-typography"><p>待排序的树形数据数组</p>
+<div class="tsd-comment tsd-typography"><p>树状数组，只读</p>
 </div>
 <div class="tsd-comment tsd-typography"></div></li>
 <li>
 <h5><span class="tsd-kind-parameter">sortFunction</span>: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">a</span>, <span class="tsd-kind-parameter">b</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span></h5>
-<div class="tsd-comment tsd-typography"><p>排序函数，用于定义排序规则</p>
+<div class="tsd-comment tsd-typography"><p>用于比较两个节点并返回排序结果的函数</p>
 </div>
 <div class="tsd-comment tsd-typography"></div>
 <ul class="tsd-parameters">
@@ -54,14 +57,14 @@
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4></li></ul></li></ul></li>
 <li>
 <h5><span class="tsd-kind-parameter">childrenFieldName</span>: <span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type tsd-kind-type-parameter">T</span><span class="tsd-signature-symbol"> = &#39;children&#39;</span></h5>
-<div class="tsd-comment tsd-typography"><p>子节点字段名称，默认为 &#39;children&#39;</p>
+<div class="tsd-comment tsd-typography"><p>子节点字段的名称，默认为&#39;children&#39;</p>
 </div>
 <div class="tsd-comment tsd-typography"></div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type tsd-kind-type-parameter">T</span><span class="tsd-signature-symbol">[]</span></h4><p>排序后的新树形数据数组</p>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type tsd-kind-type-parameter">T</span><span class="tsd-signature-symbol">[]</span></h4><p>排序后的树状数组</p>
 
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/fangwenzheng88/utils/blob/e24a7df/src/tree/sortTreeArray.ts#L11">src/tree/sortTreeArray.ts:11</a></li></ul></aside></li></ul></section></div>
+<li>Defined in <a href="https://github.com/fangwenzheng88/utils/blob/b7df92b/src/tree/sortTreeArray.ts#L16">src/tree/sortTreeArray.ts:16</a></li></ul></aside></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

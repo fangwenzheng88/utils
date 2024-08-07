@@ -19,14 +19,16 @@
 <ul class="tsd-signatures">
 <li class="tsd-signature tsd-anchor-link" id="raf"><span class="tsd-kind-call-signature">raf</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">callback</span>, <span class="tsd-kind-parameter">times</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#raf" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>requestAnimationFrame实现的定时器</p>
+<div class="tsd-comment tsd-typography"><p>使用requestAnimationFrame实现的定时器</p>
+<p>相比传统的setTimeout或setInterval，requestAnimationFrame能够更好地保证动画的流畅性，
+因为它是与浏览器的刷新率同步的，能够在每次重绘之前完成更新</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
 <h5><span class="tsd-kind-parameter">callback</span>: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span></h5>
-<div class="tsd-comment tsd-typography"><p>定时器回调函数</p>
+<div class="tsd-comment tsd-typography"><p>定时器回调函数，当达到设定的次数时执行</p>
 </div>
 <div class="tsd-comment tsd-typography"></div>
 <ul class="tsd-parameters">
@@ -37,14 +39,14 @@
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></li></ul></li>
 <li>
 <h5><span class="tsd-kind-parameter">times</span>: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></h5>
-<div class="tsd-comment tsd-typography"><p>延时次数，对应屏幕重绘次数</p>
+<div class="tsd-comment tsd-typography"><p>延时次数，默认为1次，对应屏幕重绘的次数</p>
 </div>
 <div class="tsd-comment tsd-typography"></div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><p>定时器id</p>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><p>定时器id，用于后续取消或管理定时器</p>
 
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/fangwenzheng88/utils/blob/e24a7df/src/dom/raf.ts#L24">src/dom/raf.ts:24</a></li></ul></aside></li></ul></section></div>
+<li>Defined in <a href="https://github.com/fangwenzheng88/utils/blob/b7df92b/src/dom/raf.ts#L28">src/dom/raf.ts:28</a></li></ul></aside></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

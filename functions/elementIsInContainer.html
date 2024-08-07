@@ -19,20 +19,28 @@
 <ul class="tsd-signatures">
 <li class="tsd-signature tsd-anchor-link" id="elementIsInContainer"><span class="tsd-kind-call-signature">element<wbr/>Is<wbr/>In<wbr/>Container</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">el</span><span class="tsd-signature-symbol">?</span>, <span class="tsd-kind-parameter">container</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><a href="#elementIsInContainer" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>检查一个元素是否在指定的容器内。</p>
+<div class="tsd-comment tsd-typography"><p>检查一个元素是否在指定的容器内</p>
+<p>此函数通过比较元素和容器的边界矩形来判断元素是否在容器内
+它首先获取元素和容器的边界矩形（<code>getBoundingClientRect</code>），然后通过比较这些矩形的相对位置来判断元素是否在容器内</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-parameter">el</span>: <span class="tsd-signature-type ">Element</span></h5></li>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-parameter">el</span>: <span class="tsd-signature-type ">Element</span></h5>
+<div class="tsd-comment tsd-typography"><p>要检查的元素 如果未指定或不是在客户端，则函数返回<code>false</code></p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
 <li>
-<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-parameter">container</span>: <span class="tsd-signature-type ">Window</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type ">Element</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><p>返回一个布尔值，表示元素是否在容器内。</p>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-parameter">container</span>: <span class="tsd-signature-type ">Window</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type ">Element</span></h5>
+<div class="tsd-comment tsd-typography"><p>指定的容器元素或<code>Window</code>对象 如果未指定或不是在客户端，则函数返回<code>false</code></p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><p>返回一个布尔值，表示元素是否在指定的容器内</p>
 
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/fangwenzheng88/utils/blob/e24a7df/src/dom/position.ts#L10">src/dom/position.ts:10</a></li></ul></aside></li></ul></section></div>
+<li>Defined in <a href="https://github.com/fangwenzheng88/utils/blob/b7df92b/src/dom/position.ts#L14">src/dom/position.ts:14</a></li></ul></aside></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

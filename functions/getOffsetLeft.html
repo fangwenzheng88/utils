@@ -19,21 +19,23 @@
 <ul class="tsd-signatures">
 <li class="tsd-signature tsd-anchor-link" id="getOffsetLeft"><span class="tsd-kind-call-signature">get<wbr/>Offset<wbr/>Left</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">el</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#getOffsetLeft" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>获取指定HTMLElement元素相对于其offsetParent左上角的横向偏移量。</p>
+<div class="tsd-comment tsd-typography"><p>计算元素距离文档左侧的绝对位置</p>
+<p>该函数用于获取指定元素的左偏移量，即元素相对于文档左侧的绝对位置
+它通过遍历元素及其父元素的offsetLeft属性来计算总偏移量</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
 <h5><span class="tsd-kind-parameter">el</span>: <span class="tsd-signature-type ">HTMLElement</span></h5>
-<div class="tsd-comment tsd-typography"><p>指定的HTMLElement元素。</p>
+<div class="tsd-comment tsd-typography"><p>要计算偏移量的元素</p>
 </div>
 <div class="tsd-comment tsd-typography"></div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><p>返回元素相对于其offsetParent左上角的横向偏移量。</p>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><p>元素距离文档左侧的绝对位置（以像素为单位）</p>
 
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/fangwenzheng88/utils/blob/e24a7df/src/dom/position.ts#L53">src/dom/position.ts:53</a></li></ul></aside></li></ul></section></div>
+<li>Defined in <a href="https://github.com/fangwenzheng88/utils/blob/b7df92b/src/dom/position.ts#L63">src/dom/position.ts:63</a></li></ul></aside></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

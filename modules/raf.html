@@ -16,18 +16,20 @@
 <li><a href="raf.html">raf</a></li></ul>
 <h1>Namespace raf</h1></div>
 <section class="tsd-panel tsd-comment">
-<div class="tsd-comment tsd-typography"><p>requestAnimationFrame实现的定时器</p>
+<div class="tsd-comment tsd-typography"><p>使用requestAnimationFrame实现的定时器</p>
+<p>相比传统的setTimeout或setInterval，requestAnimationFrame能够更好地保证动画的流畅性，
+因为它是与浏览器的刷新率同步的，能够在每次重绘之前完成更新</p>
 </div>
 <div class="tsd-comment tsd-typography">
-<h4>Param</h4><p>定时器回调函数</p>
+<h4>Param</h4><p>定时器回调函数，当达到设定的次数时执行</p>
 
-<h4>Param</h4><p>延时次数，对应屏幕重绘次数</p>
+<h4>Param</h4><p>延时次数，默认为1次，对应屏幕重绘的次数</p>
 
-<h4>Returns</h4><p>定时器id</p>
+<h4>Returns</h4><p>定时器id，用于后续取消或管理定时器</p>
 </div></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/fangwenzheng88/utils/blob/e24a7df/src/dom/raf.ts#L24">src/dom/raf.ts:24</a></li>
-<li>Defined in <a href="https://github.com/fangwenzheng88/utils/blob/e24a7df/src/dom/raf.ts#L51">src/dom/raf.ts:51</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/fangwenzheng88/utils/blob/b7df92b/src/dom/raf.ts#L28">src/dom/raf.ts:28</a></li>
+<li>Defined in <a href="https://github.com/fangwenzheng88/utils/blob/b7df92b/src/dom/raf.ts#L55">src/dom/raf.ts:55</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <h3 class="tsd-index-heading uppercase">Index</h3>

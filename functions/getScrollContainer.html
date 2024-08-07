@@ -19,19 +19,27 @@
 <ul class="tsd-signatures">
 <li class="tsd-signature tsd-anchor-link" id="getScrollContainer"><span class="tsd-kind-call-signature">get<wbr/>Scroll<wbr/>Container</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">el</span>, <span class="tsd-kind-parameter">direction</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type ">Window</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type ">HTMLElement</span><a href="#getScrollContainer" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>获取给定元素的滚动容器</p>
+<p>此函数用于找到一个元素的最近滚动容器，可以是 window，也可以是一个设置了滚动条的元素</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
 <h5><span class="tsd-kind-parameter">el</span>: <span class="tsd-signature-type ">HTMLElement</span></h5>
+<div class="tsd-comment tsd-typography"><p>要查找滚动容器的元素</p>
+</div>
 <div class="tsd-comment tsd-typography"></div></li>
 <li>
 <h5><span class="tsd-kind-parameter">direction</span>: <span class="tsd-signature-type ">Direction</span><span class="tsd-signature-symbol"> = &#39;y&#39;</span></h5>
+<div class="tsd-comment tsd-typography"><p>滚动方向，默认为 &#39;y&#39;，表示竖向滚动 可选值为 &#39;x&#39; 或 &#39;y&#39;</p>
+</div>
 <div class="tsd-comment tsd-typography"></div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type ">Window</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type ">HTMLElement</span></h4>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type ">Window</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type ">HTMLElement</span></h4><p>返回找到的滚动容器，可能是 window，也可能是某个设置了滚动条的 HTMLElement，如果没有找到，则返回 undefined</p>
+
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/fangwenzheng88/utils/blob/e24a7df/src/dom/scroll.ts#L31">src/dom/scroll.ts:31</a></li></ul></aside></li></ul></section></div>
+<li>Defined in <a href="https://github.com/fangwenzheng88/utils/blob/b7df92b/src/dom/scroll.ts#L40">src/dom/scroll.ts:40</a></li></ul></aside></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

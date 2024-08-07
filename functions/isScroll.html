@@ -19,19 +19,28 @@
 <ul class="tsd-signatures">
 <li class="tsd-signature tsd-anchor-link" id="isScroll"><span class="tsd-kind-call-signature">is<wbr/>Scroll</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">el</span>, <span class="tsd-kind-parameter">direction</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><a href="#isScroll" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>判断给定的元素是否具有滚动条</p>
+<p>此函数用于检测指定元素在某个方向上（默认为垂直方向）是否可能出现滚动条
+它通过检查元素的某个overflow属性值是否为&#39;.scroll&#39;, &#39;auto&#39;, 或&#39;overlay&#39;来判断</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
 <h5><span class="tsd-kind-parameter">el</span>: <span class="tsd-signature-type ">HTMLElement</span></h5>
+<div class="tsd-comment tsd-typography"><p>要检测的元素</p>
+</div>
 <div class="tsd-comment tsd-typography"></div></li>
 <li>
 <h5><span class="tsd-kind-parameter">direction</span>: <span class="tsd-signature-type ">Direction</span><span class="tsd-signature-symbol"> = &#39;y&#39;</span></h5>
+<div class="tsd-comment tsd-typography"><p>滚动条的方向，默认为&#39;y&#39;（垂直滚动条）</p>
+</div>
 <div class="tsd-comment tsd-typography"></div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><p>如果元素在指定方向上有滚动条，则返回true；否则返回false</p>
+
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/fangwenzheng88/utils/blob/e24a7df/src/dom/scroll.ts#L12">src/dom/scroll.ts:12</a></li></ul></aside></li></ul></section></div>
+<li>Defined in <a href="https://github.com/fangwenzheng88/utils/blob/b7df92b/src/dom/scroll.ts#L17">src/dom/scroll.ts:17</a></li></ul></aside></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
