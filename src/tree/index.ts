@@ -7,5 +7,6 @@ export * from './arrayToTree'
 export * from './flattenTreeArray'
 export * from './treeArrayToMap'
 export * from './filterTreeWithoutEmptyChildren'
+export * from './convertTreeData'
 
 export type * from './types'

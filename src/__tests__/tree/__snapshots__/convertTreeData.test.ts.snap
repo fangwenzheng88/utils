@@ -1,0 +1,61 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`convertTreeData > 转换非标准treeData为标准格式 1`] = `
+[
+  {
+    "children": undefined,
+    "key": "1",
+    "label": "Node 1",
+    "level": 0,
+  },
+  {
+    "children": undefined,
+    "key": "6",
+    "label": "Node 2",
+    "level": 0,
+  },
+]
+`;
+
+exports[`convertTreeData > 转换非标准treeData为标准格式 2`] = `
+[
+  {
+    "children": [
+      {
+        "children": [],
+        "key": "2",
+        "label": "Node 1.1",
+        "level": 1,
+      },
+      {
+        "children": [
+          {
+            "children": undefined,
+            "key": "4",
+            "label": "Node 1.2.1",
+            "level": 2,
+          },
+          {
+            "children": undefined,
+            "key": "5",
+            "label": "Node 1.2.2",
+            "level": 2,
+          },
+        ],
+        "key": "3",
+        "label": "Node 1.2",
+        "level": 1,
+      },
+    ],
+    "key": "1",
+    "label": "Node 1",
+    "level": 0,
+  },
+  {
+    "children": [],
+    "key": "6",
+    "label": "Node 2",
+    "level": 0,
+  },
+]
+`;
