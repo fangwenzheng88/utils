@@ -1,5 +1,18 @@
 
 
+## [1.0.9](https://github.com/fangwenzheng88/utils/compare/v1.0.8...v1.0.9) (2024-09-04)
+
+
+### Bug Fixes
+
+* 更新ts版本处理hasOwn生成的ts类型不正确 ([8ab53d7](https://github.com/fangwenzheng88/utils/commit/8ab53d727d0a46decb0f58ad0864b46e5359b292))
+
+
+### Features
+
+* [@category](https://github.com/category) tree分类下函数参数非数组时正常返回数据(之前代码会报错) ([e95ff31](https://github.com/fangwenzheng88/utils/commit/e95ff31ae87f8f319381dd853d3bc3943ac8f71d))
+* 新增convertTreeData函数 ([e185c1b](https://github.com/fangwenzheng88/utils/commit/e185c1b11cb937a2337a2ee7f28a0a6d5b4b33d5))
+
 ## [1.0.8](https://github.com/fangwenzheng88/utils/compare/v1.0.7...v1.0.8) (2024-08-07)
 
 
