@@ -1,3 +1,4 @@
+import { isArray } from '../is'
 import type { TreeNode } from './types'
 
 /**
@@ -14,6 +15,9 @@ import type { TreeNode } from './types'
  * @returns 排序后的树状数组
  */
 export function sortTreeArray<T extends TreeNode>(treeData: readonly T[], sortFunction: (a: T, b: T) => number, childrenFieldName: keyof T = 'children'): T[] {
+  if (!isArray(treeData)) {
+    return []
+  }
   // 递归排序子节点
   const sortedTreeData = treeData
     .map((node) => {

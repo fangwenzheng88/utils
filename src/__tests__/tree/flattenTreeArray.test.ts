@@ -42,4 +42,11 @@ describe('flattenTreeArray', () => {
     const result = flattenTreeArray(treeDataArr)
     expect(result).toMatchSnapshot()
   })
+
+  test('非数组参数', () => {
+    expect(
+      // @ts-expect-error
+      flattenTreeArray(null)
+    ).toEqual([])
+  })
 })

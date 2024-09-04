@@ -1,3 +1,5 @@
+import { isArray } from '../is'
+
 /**
  * @category tree
  */
@@ -47,6 +49,10 @@ function convert<T extends Record<string, any>, P extends Record<string, any> = 
   parentKey: string | undefined = undefined,
   level: number = 0
 ): TreeDataStandard<T, P>[] {
+  if (!isArray(treeData)) {
+    return []
+  }
+
   const defaultConfig: Required<TreeDataStandardConfig<T, P>> = {
     key: 'key',
     parentKey: 'parentKey',

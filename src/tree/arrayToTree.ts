@@ -1,4 +1,4 @@
-import { isFunction } from '../is'
+import { isArray, isFunction } from '../is'
 import { TreeNode } from './types'
 
 interface TreeConfig<T extends Record<string, any>> {
@@ -20,6 +20,10 @@ const defaultTreeConfig: Required<TreeConfig<Record<string, any>>> = {
  * @returns
  */
 export function arrayToTree<T extends Record<string, any>>(array: T[], treeConfig?: TreeConfig<T>): TreeNode[] {
+  if (!isArray(array)) {
+    return []
+  }
+
   const config = { ...defaultTreeConfig, ...treeConfig }
   const result: TreeNode[] = []
   const itemMap: Record<string, TreeNode> = {}

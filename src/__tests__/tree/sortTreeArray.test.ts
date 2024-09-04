@@ -132,4 +132,14 @@ describe('sortTreeArray', () => {
       },
     ])
   })
+
+  test('非数组参数', () => {
+    expect(
+      // @ts-expect-error
+      sortTreeArray(null, (a, b) => {
+        // @ts-expect-error
+        return a.id - b.id // 按 id 升序排序
+      })
+    ).toEqual([])
+  })
 })

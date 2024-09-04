@@ -130,4 +130,11 @@ describe('filterTreeWithoutEmptyChildren', () => {
       ])
     ).toEqual([])
   })
+
+  test('非数组参数', () => {
+    expect(
+      // @ts-expect-error
+      filterTreeWithoutEmptyChildren(null)
+    ).toEqual([])
+  })
 })

@@ -91,6 +91,15 @@ describe('filterTreeArray', () => {
     })
     expect(result).toEqual([])
   })
+
+  test('非数组参数', () => {
+    expect(
+      // @ts-expect-error
+      filterTreeArray3(null, () => {
+        return true
+      })
+    ).toEqual([])
+  })
 })
 
 describe('filterTreeArray2', () => {
@@ -158,6 +167,15 @@ describe('filterTreeArray2', () => {
     })
     expect(result).toEqual([])
   })
+
+  test('非数组参数', () => {
+    expect(
+      // @ts-expect-error
+      filterTreeArray3(null, () => {
+        return true
+      })
+    ).toEqual([])
+  })
 })
 
 describe('filterTreeArray3', () => {
@@ -197,5 +215,14 @@ describe('filterTreeArray3', () => {
       return false
     })
     expect(result).toEqual([])
+  })
+
+  test('非数组参数', () => {
+    expect(
+      // @ts-expect-error
+      filterTreeArray3(null, () => {
+        return true
+      })
+    ).toEqual([])
   })
 })

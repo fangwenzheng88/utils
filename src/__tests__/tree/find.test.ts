@@ -52,6 +52,15 @@ describe('findTreeNode', () => {
     })
     expect(result).toBe(undefined)
   })
+
+  test('非数组参数', () => {
+    expect(
+      // @ts-expect-error
+      findTreeNode(null, () => {
+        return true
+      })
+    ).toEqual(undefined)
+  })
 })
 
 describe('findTreeNodes', () => {
@@ -71,6 +80,15 @@ describe('findTreeNodes', () => {
       return false
     })
     expect(result).toEqual([])
+  })
+
+  test('非数组参数', () => {
+    expect(
+      // @ts-expect-error
+      findTreeNodes(null, () => {
+        return true
+      })
+    ).toEqual([])
   })
 })
 
@@ -113,5 +131,14 @@ describe('findTreeParent', () => {
       return false
     })
     expect(result).toBe(undefined)
+  })
+
+  test('非数组参数', () => {
+    expect(
+      // @ts-expect-error
+      findTreeParent(null, () => {
+        return true
+      })
+    ).toEqual(undefined)
   })
 })

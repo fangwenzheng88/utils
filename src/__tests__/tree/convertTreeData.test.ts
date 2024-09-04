@@ -73,4 +73,17 @@ describe('convertTreeData', () => {
     assertType<TreeData['id']>(result[0].key)
     assertType<TreeData['name']>(result[0].label)
   })
+
+  test('非数组参数', () => {
+    expect(
+      // @ts-expect-error
+      convertTreeData(null, (node, level) => {
+        return {
+          key: node.id,
+          label: node.name,
+          level,
+        }
+      })
+    ).toEqual([])
+  })
 })

@@ -70,6 +70,11 @@ describe('traverseTreeBFS', () => {
     )
     expect(result).toEqual(['2', '2-1', '2-1-1'])
   })
+
+  test('非数组参数', () => {
+    // @ts-expect-error
+    traverseTreeBFS(null)
+  })
 })
 
 describe('traverseTreeDFS', () => {
@@ -114,6 +119,11 @@ describe('traverseTreeDFS', () => {
     )
     expect(result).toEqual(['2', '2-1', '2-1-1'])
   })
+
+  test('非数组参数', () => {
+    // @ts-expect-error
+    traverseTreeDFS(null)
+  })
 })
 
 describe('traverseTreeDFSCallbackAfter', () => {
@@ -123,5 +133,10 @@ describe('traverseTreeDFSCallbackAfter', () => {
       result.push(node.key)
     })
     expect(result).toEqual(['1-1', '1-2-1', '1-2-2', '1-2', '1', '2-1-1', '2-1', '2'])
+  })
+
+  test('非数组参数', () => {
+    // @ts-expect-error
+    traverseTreeDFSCallbackAfter(null)
   })
 })

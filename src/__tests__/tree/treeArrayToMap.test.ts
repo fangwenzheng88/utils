@@ -57,4 +57,11 @@ describe('treeArrayToMap', () => {
     expect(consoleWarnSpy).toHaveBeenCalledTimes(1)
     expect(consoleWarnSpy).toHaveBeenCalledWith(expect.stringContaining('Duplicate key found: duplicate'))
   })
+
+  test('非数组参数', () => {
+    expect(
+      // @ts-expect-error
+      treeArrayToMap(null)
+    ).toEqual(new Map())
+  })
 })

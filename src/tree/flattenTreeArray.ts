@@ -1,3 +1,4 @@
+import { isArray } from '../is'
 import type { TreeNode } from './types'
 
 /**
@@ -50,6 +51,9 @@ import type { TreeNode } from './types'
  * ```
  */
 export function flattenTreeArray<T extends TreeNode>(treeData: T[], childrenFieldName: keyof T = 'children'): T[] {
+  if (!isArray(treeData)) {
+    return []
+  }
   const result: T[] = []
   for (const node of treeData) {
     result.push(node)

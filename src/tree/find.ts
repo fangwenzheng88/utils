@@ -1,3 +1,4 @@
+import { isArray } from '../is'
 import type { TreeNode } from './types'
 
 /**
@@ -10,6 +11,10 @@ import type { TreeNode } from './types'
  * @returns 满足条件的节点，如果没有找到，则返回 null
  */
 export function findTreeNode<T extends TreeNode>(nodes: T[], callback: (node: T) => boolean, childrenFieldName: keyof T = 'children'): T | undefined {
+  if (!isArray(nodes)) {
+    return undefined
+  }
+
   for (const node of nodes) {
     if (callback(node)) {
       return node
@@ -37,6 +42,10 @@ export function findTreeNode<T extends TreeNode>(nodes: T[], callback: (node: T)
  * @returns 满足条件的节点数组
  */
 export function findTreeNodes<T extends TreeNode>(nodes: T[], callback: (node: T) => boolean, childrenFieldName: keyof T = 'children'): T[] {
+  if (!isArray(nodes)) {
+    return []
+  }
+
   const results: T[] = []
 
   for (const node of nodes) {
@@ -64,6 +73,9 @@ export function findTreeNodes<T extends TreeNode>(nodes: T[], callback: (node: T
  * @returns 满足条件的父节点数组
  */
 export function findTreeParents<T extends TreeNode>(nodes: readonly T[], callback: (node: T) => boolean, childrenFieldName: keyof T = 'children'): T[] {
+  if (!isArray(nodes)) {
+    return []
+  }
   const parents: T[] = []
 
   for (const node of nodes) {

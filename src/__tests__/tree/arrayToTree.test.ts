@@ -89,4 +89,9 @@ describe('arrayToTree', () => {
       },
     ])
   })
+
+  test('非数组参数', () => {
+    // @ts-expect-error
+    expect(arrayToTree(null, { key: 'id', parentKey: 'pid' })).toEqual([])
+  })
 })

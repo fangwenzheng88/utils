@@ -1,3 +1,4 @@
+import { isArray } from '../is'
 import type { TreeNode } from './types'
 
 /**
@@ -49,6 +50,9 @@ import type { TreeNode } from './types'
  * ```
  */
 export function filterTreeWithoutEmptyChildren<T extends TreeNode>(treeDataArr: T[], childrenFieldName: keyof T = 'children'): T[] {
+  if (!isArray(treeDataArr)) {
+    return []
+  }
   const filteredNodes: T[] = []
   for (const node of treeDataArr) {
     const children = node[childrenFieldName]

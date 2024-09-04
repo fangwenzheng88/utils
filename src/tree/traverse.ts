@@ -1,3 +1,4 @@
+import { isArray } from '../is'
 import type { TreeNode } from './types'
 
 /**
@@ -36,6 +37,9 @@ export function traverseTreeDFSCallbackAfter<T extends TreeNode>(data: T[], call
  * @param executeCallbackAfter callback的执行时机
  */
 function traverseDFS<T extends TreeNode>(data: T[], callback?: (node: T) => void, childrenFieldName: keyof T = 'children', executeCallbackAfter = false) {
+  if (!isArray(data)) {
+    return
+  }
   for (const node of data) {
     if (callback && !executeCallbackAfter) {
       callback(node)
@@ -61,6 +65,10 @@ function traverseDFS<T extends TreeNode>(data: T[], callback?: (node: T) => void
  * @param childrenFieldName 子节点字段名
  */
 export function traverseTreeBFS<T extends TreeNode>(data: T[], callback?: (node: T) => void, childrenFieldName: keyof T = 'children') {
+  if (!isArray(data)) {
+    return
+  }
+
   const queue: T[] = []
 
   for (const node of data) {

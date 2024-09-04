@@ -1,3 +1,4 @@
+import { isArray } from '../is'
 import type { TreeNode } from './types'
 
 /**
@@ -29,6 +30,9 @@ import type { TreeNode } from './types'
  * ```
  */
 export function filterTreeArray<T extends TreeNode>(treeDataArr: readonly T[], filterFn: (node: T) => boolean, childrenFieldName: keyof T = 'children'): T[] {
+  if (!isArray(treeDataArr)) {
+    return []
+  }
   const filteredNodes: T[] = []
   for (const node of treeDataArr) {
     if (filterFn(node)) {
@@ -79,6 +83,9 @@ export function filterTreeArray<T extends TreeNode>(treeDataArr: readonly T[], f
  * ```
  */
 export function filterTreeArray2<T extends TreeNode>(treeDataArr: readonly T[], filterFn: (node: T) => boolean, childrenFieldName: keyof T = 'children'): T[] {
+  if (!isArray(treeDataArr)) {
+    return []
+  }
   const filteredNodes: T[] = []
   for (const node of treeDataArr) {
     const filteredNode: T = { ...node }
@@ -123,6 +130,9 @@ export function filterTreeArray2<T extends TreeNode>(treeDataArr: readonly T[], 
  * ```
  */
 export function filterTreeArray3<T extends TreeNode>(treeDataArr: readonly T[], filterFn: (node: T) => boolean, childrenFieldName: keyof T = 'children'): T[] {
+  if (!isArray(treeDataArr)) {
+    return []
+  }
   const filteredNodes: T[] = []
   for (const node of treeDataArr) {
     if (filterFn(node)) {

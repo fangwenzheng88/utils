@@ -72,4 +72,9 @@ describe('convertToStandardTreeData', () => {
     assertType<TreeData>(result[0].data)
     assertType<1>(result[0].number)
   })
+
+  test('非数组参数', () => {
+    // @ts-expect-error
+    expect(convertToStandardTreeData(null)).toEqual([])
+  })
 })
