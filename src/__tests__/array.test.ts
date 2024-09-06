@@ -21,6 +21,12 @@ describe('remove', () => {
     expect(remove(array2, 'd')).toBe(false)
     expect(array2).toEqual(['a', 'b', 'c'])
   })
+
+  test('remove 第三个参数toKey', () => {
+    const array = [{ key: 1 }, { key: 2 }, { key: 3 }]
+    expect(remove(array, { key: 3 }, (item) => item.key)).toBe(true)
+    expect(array).toEqual([{ key: 1 }, { key: 2 }])
+  })
 })
 
 describe('removeBy', () => {
@@ -64,6 +70,12 @@ describe('removeAll', () => {
     const array2 = ['a', 'b', 'c']
     expect(removeAll(array2, 'd')).toBe(0)
     expect(array2).toEqual(['a', 'b', 'c'])
+  })
+
+  test('removeAll 第三个参数toKey', () => {
+    const array = [{ key: 1 }, { key: 1 }, { key: 3 }]
+    expect(removeAll(array, { key: 1 }, (item) => item.key)).toBe(2)
+    expect(array).toEqual([{ key: 3 }])
   })
 })
 

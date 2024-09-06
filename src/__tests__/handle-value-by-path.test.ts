@@ -16,7 +16,8 @@ describe('getValueByPath', () => {
 
     expect(getValueByPath(obj, 'a.b.c')).toBe('value')
     expect(getValueByPath(obj, 'a.b.d')).toBe(undefined)
-    expect(getValueByPath(obj, 'a.e')).toBe(undefined)
+    expect(getValueByPath<string>(obj, 'a.e')).toBe(undefined)
+    expect(getValueByPath(obj, 'a.e', 1)).toBe(1)
     expect(getValueByPath(obj, 'x.y[0]')).toBe(1)
     expect(getValueByPath(obj, 'x.y.0')).toBe(1)
     expect(getValueByPath(obj, 'x.y[2]')).toBe(3)
@@ -30,16 +31,16 @@ describe('getValueByPath', () => {
 })
 
 describe('setValueByPath', () => {
-  test('给不存在路径的值赋值，赋值失败', () => {
+  test('给不存在路径的值赋值，赋值成功', () => {
     const obj = {} as any
     setValueByPath(obj, 'a.b.c', 'value')
-    expect(obj).toEqual({})
+    expect(obj).toEqual({ a: { b: { c: 'value' } } })
   })
 
-  test('addPath: true，给不存在路径的值赋值，赋值成功', () => {
+  test('addPath: false，给不存在路径的值赋值，赋值失败', () => {
     const obj = {} as any
-    setValueByPath(obj, 'a.b.c', 'value', { addPath: true })
-    expect(obj.a.b.c).toBe('value')
+    setValueByPath(obj, 'a.b.c', 'value', { addPath: false })
+    expect(obj).toEqual({})
   })
 
   test('a.b.c[0]，路径支持数组', () => {
