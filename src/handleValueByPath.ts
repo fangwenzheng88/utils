@@ -1,6 +1,4 @@
-import { isArray, isObject, isUndefined } from './is'
-
-type Data = Record<string, unknown> | unknown[]
+import { isUndefined } from './is'
 
 /**
  * 通过路径获取对象中的值
@@ -15,32 +13,21 @@ type Data = Record<string, unknown> | unknown[]
  * const value = getValueByPath<number>(obj, 'a.b.c'); // value = 123
  * ```
  */
-export const getValueByPath = <T = any>(obj: Data | undefined, path: string | undefined): T | undefined => {
-  if (!obj || !path) {
-    return undefined
-  }
-  // eslint-disable-next-line no-param-reassign
-  path = path.replace(/\[(\w+)\]/g, '.$1')
-  const keys = path.split('.')
-  if (keys.length === 0) {
-    return undefined
-  }
-
-  let temp = obj
-
-  for (let i = 0; i < keys.length; i++) {
-    if ((!isObject(temp) && !isArray(temp)) || !keys[i]) {
-      return undefined
+export const getValueByPath = <T = unknown>(value: any, path: string, defaultValue?: T): T => {
+  const segments = path.split(/[.[\]]/g)
+  let current: any = value
+  for (const key of segments) {
+    if (current === null) return defaultValue as T
+    if (current === undefined) return defaultValue as T
+    const dequoted = key.replace(/['"]/g, '')
+    if (dequoted.trim() === '') {
+      // eslint-disable-next-line no-continue
+      continue
     }
-    const currentKey = keys[i] as keyof Data
-    if (i !== keys.length - 1) {
-      temp = temp[currentKey] as any
-    } else {
-      return temp[currentKey] as T
-    }
+    current = current[dequoted]
   }
-
-  return undefined
+  if (current === undefined) return defaultValue as T
+  return current
 }
 
 /**
@@ -67,37 +54,34 @@ export const getValueByPath = <T = any>(obj: Data | undefined, path: string | un
  * // { a: { b: { c: ['hello', 'world'] } } }
  * ```
  */
-export const setValueByPath = (obj: Data | undefined, path: string | undefined, value: any, { addPath }: { addPath?: boolean } = {}) => {
+export const setValueByPath = <T extends object, K>(obj: T, path: string, value: K, { addPath = true }: { addPath?: boolean } = {}) => {
   if (!obj || !path) {
     return
   }
-  // eslint-disable-next-line no-param-reassign
-  path = path.replace(/\[(\w+)\]/g, '.$1')
-  const keys = path.split('.')
-  if (keys.length === 0) {
+  const segments = path.split(/[.[\]]/g).filter((x) => !!x.trim())
+  if (segments.length === 0) {
     return
   }
 
-  let temp = obj
+  let current: any = obj
 
-  for (let i = 0; i < keys.length; i++) {
-    if ((!isObject(temp) && !isArray(temp)) || !keys[i]) {
-      return
-    }
-    const currentKey = keys[i] as keyof Data
-    if (i !== keys.length - 1) {
-      if (addPath && isUndefined(temp[currentKey])) {
-        if (/^\d+$/.test(keys[i + 1])) {
-          // @ts-ignore
-          temp[currentKey] = []
+  for (let i = 0; i < segments.length; i++) {
+    const dequoted = segments[i]
+    if (i !== segments.length - 1) {
+      if (isUndefined(current[dequoted])) {
+        if (addPath) {
+          if (/^\d+$/.test(segments[i + 1])) {
+            current[dequoted] = []
+          } else {
+            current[dequoted] = {}
+          }
         } else {
-          // @ts-ignore
-          temp[currentKey] = {}
+          return
         }
       }
-      temp = temp[currentKey] as any
+      current = current[dequoted]
     } else {
-      temp[currentKey] = value
+      current[dequoted] = value
     }
   }
 }
