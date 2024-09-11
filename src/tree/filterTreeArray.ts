@@ -1,4 +1,4 @@
-import { isArray } from '../is'
+import { isArray } from '../native-is'
 import type { TreeNode } from './types'
 
 /**

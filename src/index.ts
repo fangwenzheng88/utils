@@ -1,3 +1,4 @@
+export * from './native-is'
 export * from './is'
 /**
  * @category array

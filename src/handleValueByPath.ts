@@ -1,4 +1,4 @@
-import { isUndefined } from './is'
+import { isUndefined } from './native-is'
 
 /**
  * 通过路径获取对象中的值

@@ -1,4 +1,4 @@
-import { isArray, isFunction } from '../is'
+import { isArray, isFunction } from '../native-is'
 import { TreeNode } from './types'
 
 interface TreeConfig<T extends Record<string, any>> {

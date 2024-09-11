@@ -1,6 +1,5 @@
 import * as CSS from 'csstype'
-import { isObject, isString, isNumeric, isUnDef } from '../is'
-import { entriesOf, keysOf } from '../objects'
+import { isObject, isString, isNumeric, isUnDef, entriesOf, keysOf } from '../index'
 
 export interface CSSProperties extends CSS.Properties<string | number>, CSS.PropertiesHyphen<string | number> {
   /**

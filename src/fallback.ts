@@ -1,5 +1,5 @@
 import dayjs, { Dayjs } from 'dayjs'
-import { isString, isNumeric, isUnDef, isNotEmptyArray } from './is'
+import { isString, isNumeric, isUnDef, isNotEmptyArray } from './index'
 
 /**
  * 返回具有回退（fallback）行为的数组

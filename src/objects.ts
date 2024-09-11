@@ -1,5 +1,5 @@
 import { getValueByPath, setValueByPath } from './handleValueByPath'
-import { isArray, isObject } from './is'
+import { isArray, isObject } from './native-is'
 
 /**
  * @category object

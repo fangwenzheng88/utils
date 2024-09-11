@@ -1,4 +1,4 @@
-import { test, expect, describe, expectTypeOf, assertType } from 'vitest'
+import { assertType, describe, expect, expectTypeOf, test } from 'vitest'
 import { getObjectValue } from '../getObjectValue'
 
 type Data = {
