@@ -40,9 +40,9 @@ export default [
     input,
     output: [
       {
-        format: 'es',
+        format: 'cjs',
         dir: 'lib',
-        entryFileNames: '[name].d.ts',
+        entryFileNames: '[name].d.cts',
         preserveModules: true,
         preserveModulesRoot: 'src',
       },
@@ -56,7 +56,7 @@ export default [
       {
         format: 'es',
         dir: 'es',
-        entryFileNames: '[name].mjs',
+        entryFileNames: '[name].js',
         preserveModules: true,
         preserveModulesRoot: 'src',
       },

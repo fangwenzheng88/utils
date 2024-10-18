@@ -3,9 +3,6 @@
   "type": "module",
   "version": "1.0.9",
   "description": "",
-  "main": "lib/index.cjs",
-  "module": "es/index.mjs",
-  "types": "es/index.d.ts",
   "unpkg": "dist/index.umd.js",
   "jsdelivr": "dist/index.umd.js",
   "repository": {
@@ -15,11 +12,15 @@
   "homepage": "https://fangwenzheng88.github.io/utils/",
   "exports": {
     ".": {
-      "import": "./es/index.mjs",
-      "require": "./lib/index.cjs",
-      "types": "./es/index.d.ts"
-    },
-    "./*": "./*"
+      "import": {
+        "types": "./es/index.d.ts",
+        "default": "./es/index.js"
+      },
+      "require": {
+        "types": "./lib/index.d.cts",
+        "default": "./lib/index.cjs"
+      }
+    }
   },
   "scripts": {
     "dev": "rollup --watch -c rollup.config.js",
